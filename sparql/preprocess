@@ -27,7 +27,6 @@ for (i=0; i<colNames.size(); i++) {
 map = new HashSet()
 for (i=1;i<=results.rowCount;i++) {
   rowVals = results.getRow(i)
-  println rowVals.class.name
   for (j=0; j<rowVals.size(); j++) {
     print rowVals[j] + "\t"
   }

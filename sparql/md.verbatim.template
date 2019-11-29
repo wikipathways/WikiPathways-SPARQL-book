@@ -1,4 +1,11 @@
-**Script** [sparql/%STEM%.%EXT%](sparql/%STEM%.code.md)
+**SPARQL** [sparql/%STEM%.%EXT%](sparql/%STEM%.code.md)
 ```sparql
 %MD%
 ```
+
+Output:
+
+```plain
+%OUT%
+``` 
+
