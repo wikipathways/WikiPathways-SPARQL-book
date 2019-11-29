@@ -1,4 +1,4 @@
-TARGETS := intro.md
+TARGETS := index.md
 
 all: ${TARGETS}
 	@mv ${TARGETS} docs/
