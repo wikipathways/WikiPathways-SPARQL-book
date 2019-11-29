@@ -1,0 +1,36 @@
+// Copyright (c) 2019  Egon Willighagen <egon.willighagen@gmail.com>
+//
+// GPL v3
+
+@Grab(group='io.github.egonw.bacting', module='managers-rdf', version='0.0.10')
+@Grab(group='io.github.egonw.bacting', module='managers-ui', version='0.0.10')
+
+bioclipse = new net.bioclipse.managers.BioclipseManager(".");
+rdf = new net.bioclipse.managers.RDFManager(".");
+
+inFile = args[0];
+
+sparql = new File(inFile).text
+
+if (bioclipse.isOnline()) {
+  results = rdf.sparqlRemote(
+    "http://sparql.wikipathways.org/sparql", sparql
+  )
+}
+
+// make output
+colNames = results.columnNames
+for (i=0; i<colNames.size(); i++) {
+  print colNames.get(i) + "\t"
+}
+
+map = new HashSet()
+for (i=1;i<=results.rowCount;i++) {
+  rowVals = results.getRow(i)
+  println rowVals.class.name
+  for (j=0; j<rowVals.size(); j++) {
+    print rowVals[j] + "\t"
+  }
+  println ""
+}
+

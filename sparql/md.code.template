@@ -1,0 +1,13 @@
+# %STEM%.%EXT%
+
+**Source code:**
+
+```sparql
+%SOURCECODE%
+```
+
+**Output:**
+
+```plain
+%OUT%
+```

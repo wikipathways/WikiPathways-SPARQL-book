@@ -1,0 +1,10 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX void:    <http://rdfs.org/ns/void#>
+PREFIX pav:     <http://purl.org/pav/>
+
+select distinct ?dataset (str(?titleLit) as ?title) ?date ?license where {
+  ?dataset a void:Dataset ;
+    dcterms:title ?titleLit ;
+    dcterms:license ?license ;
+    pav:createdOn ?date .
+}
