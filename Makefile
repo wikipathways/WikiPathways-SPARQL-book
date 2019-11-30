@@ -1,8 +1,10 @@
-SOURCES := intro.i.md index.i.md
-TARGETS := intro.md
+SOURCES := intro.i.md index.i.md feds.i.md
+TARGETS := intro.md feds.md
 METAS := references.dat toc.txt
 
-all: ${METAS} ${TARGETS} index.md
+SUBDIRS := sparql
+
+all: ${SUBDIRS} ${METAS} ${TARGETS} index.md
 	@mv ${TARGETS} docs/
 	@cp sparql/*.code.md docs/sparql/
 
