@@ -22,24 +22,19 @@ if (bioclipse.isOnline()) {
 colNames = results.columnNames
 colCount = colNames.size()
 
-colNameRowStr = ""
-horizontalDividerStr = ""
+println "<table>"
+println "  <tr>"
 for (i=0; i<colCount; i++) {
-  horizontalDividerStr += "|----"
-  colNameRowStr += "| ${colNames.get(i)} "
+  println "    <td><b>${colNames.get(i)}</b></td>"
 }
-horizontalDividerStr += "|"
-colNameRowStr += "|"
+println "  </tr>"
 
-println horizontalDividerStr
-println colNameRowStr
-println horizontalDividerStr
-map = new HashSet()
 for (i=1;i<=results.rowCount;i++) {
   rowVals = results.getRow(i)
+  println "  <tr>"
   for (j=0; j<rowVals.size(); j++) {
-    print "| ${rowVals[j]} "
+    println "    <td>${rowVals[j]}</td>"
   }
-  println " |"
+  println "  </tr>"
 }
-println horizontalDividerStr
+println "</table>"
