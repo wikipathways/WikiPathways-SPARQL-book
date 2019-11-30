@@ -1,9 +1,13 @@
-# Introduction
+# WikiPathways SPARQL Book
 
-## Metadata queries
 
-<sparql>metadata</sparql>
+**Egon L. Willighagen**<br />
 
-Which gives as output:
+© E.L. Willighagen 2019
 
-<out>metadata</out>
+License: CC-BY-SA 4.0 International
+
+## Contents
+
+<toc>toc.txt</toc>
+
