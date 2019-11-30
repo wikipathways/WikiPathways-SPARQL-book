@@ -8,7 +8,11 @@ queries.
 
 The Kidney & Urinary Pathway Knowledge Base (KUPKB) is a knowledge
 base of assay data [<a href="#citeref1">1</a>,<a href="#citeref2">2</a>].
-The following query lists all assay data for genew in WP1560:
+
+### Assays for genes in WP1560
+
+The following query lists all assay data for genes in 
+[wikipathways:WP1560](https://identifiers.org/wikipathways:WP1560):
 
 **SPARQL** [sparql/kupkbGene.rq](sparql/kupkbGene.code.html)
 ```sparql
@@ -40,6 +44,53 @@ SELECT DISTINCT ?geneProduct ?geneid ?genesymbol ?expression ?sample ?factor ?sp
       ?listmember kupkb:hasDatabaseRef ?uniprot .
     }
     ?listmember kupkb:hasExpression ?expressionURI .  
+    ?expressionURI rdfs:label ?expression .
+    ?compoundList kupkb:hasMember ?listmember .    
+    ?analysis kupkb:produces ?compoundList ;
+              kupkb:annotatedWith ?annotation ;
+              kupkb:analysisOf  ?experiment  .
+    ?annotation kupkb:hasAnnotationRole kupo:KUPO_0300008 ;
+                kupkb:bioMaterial ?analyteBioMaterial . 
+    ?analyteBioMaterial rdfs:label ?sample . 
+    OPTIONAL {
+      ?annotation kupkb:hasDisease ?analyteDiseaseURI . 
+      ?analyteDiseaseURI rdfs:label ?factor .
+    } 
+  }
+}
+```
+
+### Assays for metabolites in WP3604
+
+And this variant for the previous query lists assay data for all
+metabolites in [wikipathways:WP3604](https://identifiers.org/wikipathways:WP3604):
+
+**SPARQL** [sparql/kupkbMetabolite.rq](sparql/kupkbMetabolite.code.html)
+```sparql
+PREFIX wp: <http://vocabularies.wikipathways.org/wp#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX kupkb: <http://www.kupkb.org/data/kupkb/>
+PREFIX kupo: <http://www.kupkb.org/data/kupo/>
+PREFIX obo: <http://purl.org/obo/owl/>
+PREFIX bio2rdf: <http://bio2rdf.org/ns/bio2rdf:>
+SELECT DISTINCT ?geneProduct ?label ?species ?metid ?symbol ?expression ?sample ?factor ?experiment WHERE {
+  ?pathway dcterms:identifier "WP3604"^^xsd:string ;
+           wp:organismName ?species .
+  ?geneProduct a wp:Metabolite ;
+      rdfs:label ?label ;
+      dcterms:isPartOf ?pathway ;
+      wp:bdbHmdb ?hmdbID .
+  BIND (iri(concat("http://bio2rdf.org/hmdb:HMDB",SUBSTR(str(?hmdbID),35))) AS ?metid)
+  SERVICE <http://sparql.kupkb.org/sparql> {
+    {?metid bio2rdf:symbol ?symbol}
+    UNION
+    {?metid rdfs:label ?symbol}
+    ?listmember kupkb:hasDatabaseRef ?metid ;
+                kupkb:hasExpression ?expressionURI .  
     ?expressionURI rdfs:label ?expression .
     ?compoundList kupkb:hasMember ?listmember .    
     ?analysis kupkb:produces ?compoundList ;
