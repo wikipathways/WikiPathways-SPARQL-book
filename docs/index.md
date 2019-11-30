@@ -9,5 +9,6 @@ License: CC-BY-SA 4.0 International
 
 ## Contents
 
-<toc>toc.txt</toc>
+1. [Introduction](intro.md) <br />
+1.1. [Metadata queries](intro.md#metadata-queries) <br />
 

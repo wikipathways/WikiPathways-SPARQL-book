@@ -14,6 +14,10 @@ lines.each { String line ->
     def instruction = new XmlSlurper().parseText(line)
     def srcLines = new File("sparql/${instruction.text()}.out").readLines()
     srcLines.each { String srcLine -> println srcLine }
+  } else if (line.startsWith("<toc>")) {
+    def instruction = new XmlSlurper().parseText(line)
+    def srcLines = new File("${instruction.text()}").readLines()
+    srcLines.each { String srcLine -> println srcLine.replaceAll(".i.md", ".md") }
   } else {
     while (line.contains(".i.md")) {
       line = line.replace(".i.md", ".md")

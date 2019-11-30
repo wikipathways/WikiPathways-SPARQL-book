@@ -11,7 +11,7 @@ toc.txt: makeToC.groovy order.txt ${SOURCES}
 
 index.md: index.i.md toc.txt createMarkdown.groovy
 	@echo "Creating $@"
-	@groovy createMarkdown.groovy index.i.md > index.md
+	@groovy createMarkdown.groovy index.i.md > docs/index.md
 
 %.md : %.i.md createMarkdown.groovy
 	@echo "Creating $@"
