@@ -12,10 +12,8 @@ lines.each { String line ->
     srcLines.each { String srcLine -> println srcLine }
   } else if (line.startsWith("<out>")) {
     def instruction = new XmlSlurper().parseText(line)
-    println "```tsv"
     def srcLines = new File("sparql/${instruction.text()}.out").readLines()
     srcLines.each { String srcLine -> println srcLine }
-    println "```"
   } else {
     while (line.contains(".i.md")) {
       line = line.replace(".i.md", ".md")

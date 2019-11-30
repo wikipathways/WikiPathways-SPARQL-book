@@ -13,7 +13,8 @@ select distinct ?dataset (str(?titleLit) as ?title) ?date ?license where {
 }
 ```
 **Output:**
-```plain
-dataset	title	date	license	java.util.ArrayList
-http://data.wikipathways.org/20191110/rdf/	WikiPathways RDF 20191110	2019-11-10T10:49:50.340Z	http://creativecommons.org/publicdomain/zero/1.0/	
-```
+|----|----|----|----|
+| dataset | title | date | license |
+|----|----|----|----|
+| http://data.wikipathways.org/20191110/rdf/ | WikiPathways RDF 20191110 | 2019-11-10T10:49:50.340Z | http://creativecommons.org/publicdomain/zero/1.0/  |
+|----|----|----|----|

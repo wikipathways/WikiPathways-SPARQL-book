@@ -20,16 +20,26 @@ if (bioclipse.isOnline()) {
 
 // make output
 colNames = results.columnNames
-for (i=0; i<colNames.size(); i++) {
-  print colNames.get(i) + "\t"
-}
+colCount = colNames.size()
 
+colNameRowStr = ""
+horizontalDividerStr = ""
+for (i=0; i<colCount; i++) {
+  horizontalDividerStr += "|----"
+  colNameRowStr += "| ${colNames.get(i)} "
+}
+horizontalDividerStr += "|"
+colNameRowStr += "|"
+
+println horizontalDividerStr
+println colNameRowStr
+println horizontalDividerStr
 map = new HashSet()
 for (i=1;i<=results.rowCount;i++) {
   rowVals = results.getRow(i)
   for (j=0; j<rowVals.size(); j++) {
-    print rowVals[j] + "\t"
+    print "| ${rowVals[j]} "
   }
-  println ""
+  println " |"
 }
-
+println horizontalDividerStr
