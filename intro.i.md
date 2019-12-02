@@ -7,6 +7,9 @@ Description Framework (RDF) [<cite>Q26261238</cite>].
 
 ## Metadata queries
 
+The following query provides some information about what is currently loaded
+in the public SPARQL endpoint at [http://sparql.wikipathways.org](http://sparql.wikipathways.org):
+
 <sparql>metadata</sparql>
 
 Which gives as output:
