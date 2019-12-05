@@ -67,6 +67,13 @@ for (int type=0; type<mdTypes.size(); type++) {
       } else if (line.contains("%OUT%")) {
         def srcLines = new File(runClass + ".out").readLines()
         srcLines.each { String srcLine -> mdWriter.write(srcLine + "\n") }
+      } else if (line.contains("%RUNURL%")) {
+        def srcLines = new File(srcFile).readLines()
+        unencodedSPARQL = ""
+        srcLines.each { String srcLine -> unencodedSPARQL += srcLine }
+        encodedSPARQL = java.net.URLEncoder.encode(unencodedSPARQL, "UTF-8")
+        line = line.replace("%RUNURL%", "http://sparql.wikipathways.org/?query=" + encodedSPARQL);
+        mdWriter.write(line + "\n");
       } else {
         mdWriter.write(line + "\n");
       }

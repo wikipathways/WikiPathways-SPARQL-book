@@ -7,6 +7,9 @@ Description Framework (RDF) [<a href="#citeref5">5</a>].
 
 ## Metadata queries
 
+The following query provides some information about what is currently loaded
+in the public SPARQL endpoint at [http://sparql.wikipathways.org](http://sparql.wikipathways.org):
+
 **SPARQL** [sparql/metadata.rq](sparql/metadata.code.html)
 ```sparql
 PREFIX dcterms: <http://purl.org/dc/terms/>
