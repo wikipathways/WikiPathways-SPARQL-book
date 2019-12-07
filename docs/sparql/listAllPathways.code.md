@@ -10,6 +10,7 @@ WHERE {
      wp:organismName ?label .
 }
 ```
+[Execute](http://sparql.wikipathways.org/?query=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+PREFIX+wp%3A+++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3ESELECT+DISTINCT+%28str%28%3Ftitle%29+as+%3Fpathway%29+%28str%28%3Flabel%29+as+%3Forganism%29WHERE+%7B+%3Fpw+dc%3Atitle+%3Ftitle+%3B+++++wp%3AorganismName+%3Flabel+.%7D)
 **Output:**
 <table>
   <tr>
@@ -8729,4 +8730,3 @@ WHERE {
     <td>Saccharomyces cerevisiae</td>
   </tr>
 </table>
-[Execute](http://sparql.wikipathways.org/?query=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+PREFIX+wp%3A+++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3ESELECT+DISTINCT+%28str%28%3Ftitle%29+as+%3Fpathway%29+%28str%28%3Flabel%29+as+%3Forganism%29WHERE+%7B+%3Fpw+dc%3Atitle+%3Ftitle+%3B+++++wp%3AorganismName+%3Flabel+.%7D)

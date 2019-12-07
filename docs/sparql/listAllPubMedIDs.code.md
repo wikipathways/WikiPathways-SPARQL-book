@@ -8,6 +8,7 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
           dcterms:isPartOf ?pathway
 } ORDER BY ?pathway LIMIT 500
 ```
+[Execute](http://sparql.wikipathways.org/?query=PREFIX+wp%3A++++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3EPREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3ESELECT+DISTINCT+%3Fpathway+%3Fpubmed+WHERE+%7B++%3Fpubmed+a+++++++wp%3APublicationReference+%3B++++++++++dcterms%3AisPartOf+%3Fpathway%7D+ORDER+BY+%3Fpathway+LIMIT+500)
 **Output:**
 <table>
   <tr>
@@ -2015,4 +2016,3 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
     <td>http://identifiers.org/pubmed/11340051</td>
   </tr>
 </table>
-[Execute](http://sparql.wikipathways.org/?query=PREFIX+wp%3A++++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3EPREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3ESELECT+DISTINCT+%3Fpathway+%3Fpubmed+WHERE+%7B++%3Fpubmed+a+++++++wp%3APublicationReference+%3B++++++++++dcterms%3AisPartOf+%3Fpathway%7D+ORDER+BY+%3Fpathway+LIMIT+500)
