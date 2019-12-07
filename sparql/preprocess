@@ -13,9 +13,10 @@ inFile = args[0];
 sparql = new File(inFile).text
 
 if (bioclipse.isOnline()) {
-  results = rdf.sparqlRemote(
+  resultsData = bioclipse.sparqlRemote(
     "http://sparql.wikipathways.org/sparql", sparql
   )
+  results = rdf.processSPARQLXML(resultsData, sparql)
 }
 
 // make output
