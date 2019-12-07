@@ -1,12 +1,12 @@
 # Federated Queries
 
 One of the features of SPARQL is that you can run a query over more
-than one SPARQL endpoint. Here we report a number of such SPARQL
+than one SPARQL endpoint. Here we report a number of such <topic>federated SPARQL</topic>
 queries.
 
 ## The Kidney & Urinary Pathway Knowledge Base
 
-The Kidney & Urinary Pathway Knowledge Base (KUPKB) is a knowledge
+The <topic>Kidney and Urinary Pathway Knowledge Base</topic> (KUPKB) is a knowledge
 base of assay data [<cite>Q21198687</cite>,<cite>Q28260266</cite>].
 
 ### Assays for genes in WP1560

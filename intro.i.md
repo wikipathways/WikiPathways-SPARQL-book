@@ -27,7 +27,7 @@ Which gives as output:
 ## WikiPathways RDF Data Model
 
 The WikiPathways RDF content consists of two parts, the GPMLRDF which contains a direct
-RDF representation of the original GPML in which the WikiPathways are stored, and the
+RDF representation of the original <topic>GPML</topic> in which the WikiPathways are stored, and the
 WPRDF, which contains the interpretable biology stored in those pathways.
 
 This section describes both bits of RDF, because not all information in the GPML
