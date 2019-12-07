@@ -48,7 +48,7 @@ Which gives as output:
   </tr>
 </table>
 
-# WikiPathways RDF Data Model
+## WikiPathways RDF Data Model
 
 The WikiPathways RDF content consists of two parts, the GPMLRDF which contains a direct
 RDF representation of the original GPML in which the WikiPathways are stored, and the
