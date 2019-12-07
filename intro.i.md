@@ -35,13 +35,13 @@ can be biologically interpreted and there are use case of the GPML at this momen
 
 ### Pathways
 
-Of course, central to a pathway database are the pathways:
+Of course, central to a <topic>pathway</topic> database are the pathways:
 
 <sparql>listAllPathways</sparql>
 
 ### Articles
 
-Similarly, we can list all PubMed identifiers with the pathways they occur in:
+Similarly, we can list all <topic>PubMed</topic> identifiers with the pathways they occur in:
 
 <sparql>listAllPubMedIDs</sparql>
 

@@ -11,7 +11,7 @@ base of assay data [<a href="#citeref1">1</a>,<a href="#citeref2">2</a>].
 
 ### Assays for genes in WP1560
 
-The following query lists all assay data for genes in 
+The following query lists all <a name="tp3">assay</a> data for genes in 
 [wikipathways:WP1560](https://identifiers.org/wikipathways:WP1560):
 
 **SPARQL** [sparql/kupkbGene.rq](sparql/kupkbGene.code.html) ([run](http://sparql.wikipathways.org/?query=PREFIX+wp%3A+%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3EPREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3EPREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3EPREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3EPREFIX+owl%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3EPREFIX+xsd%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3EPREFIX+kupkb%3A+%3Chttp%3A%2F%2Fwww.kupkb.org%2Fdata%2Fkupkb%2F%3EPREFIX+kupo%3A+%3Chttp%3A%2F%2Fwww.kupkb.org%2Fdata%2Fkupo%2F%3EPREFIX+obo%3A+%3Chttp%3A%2F%2Fpurl.org%2Fobo%2Fowl%2F%3EPREFIX+bio2rdf%3A+%3Chttp%3A%2F%2Fbio2rdf.org%2Fns%2Fbio2rdf%3A%3ESELECT+DISTINCT+%3FgeneProduct+%3Fgeneid+%3Fgenesymbol+%3Fexpression+%3Fsample+%3Ffactor+%3Fspecies+%3Fexperiment+WHERE+%7B++%3Fpathway+dcterms%3Aidentifier+%22WP1560%22%5E%5Exsd%3Astring+%3B+++++++++++wp%3AorganismName+%3Fspecies+.++%3FgeneProduct+a+wp%3AGeneProduct+%3B++++++rdfs%3Alabel+%3Flabel+%3B++++++dcterms%3AisPartOf+%3Fpathway+%3B++++++wp%3AbdbEntrezGene+%3FncbiID+.++BIND+%28iri%28concat%28%22http%3A%2F%2Fbio2rdf.org%2Fgeneid%3A%22%2CSUBSTR%28str%28%3FncbiID%29%2C33%29%29%29+AS+%3Fgeneid%29++SERVICE+%3Chttp%3A%2F%2Fsparql.kupkb.org%2Fsparql%3E+%7B++++%7B%3Fgeneid+bio2rdf%3Asymbol+%3Fgenesymbol%7D++++UNION++++%7B%3Fgeneid+rdfs%3Alabel+%3Fgenesymbol%7D++++++++%7B%3Flistmember+kupkb%3AhasDatabaseRef+%3Fgeneid%7D+++++UNION++++++++++++++++++%7B+%3Fgeneid+%3Chttp%3A%2F%2Fbio2rdf.org%2Fns%2Funiprot%3AxProtein%3E+%3Funiprot+.++++++++%3Flistmember+kupkb%3AhasDatabaseRef+%3Funiprot+.++++%7D++++%3Flistmember+kupkb%3AhasExpression+%3FexpressionURI+.++++++%3FexpressionURI+rdfs%3Alabel+%3Fexpression+.++++%3FcompoundList+kupkb%3AhasMember+%3Flistmember+.++++++++%3Fanalysis+kupkb%3Aproduces+%3FcompoundList+%3B++++++++++++++kupkb%3AannotatedWith+%3Fannotation+%3B++++++++++++++kupkb%3AanalysisOf++%3Fexperiment++.++++%3Fannotation+kupkb%3AhasAnnotationRole+kupo%3AKUPO_0300008+%3B++++++++++++++++kupkb%3AbioMaterial+%3FanalyteBioMaterial+.+++++%3FanalyteBioMaterial+rdfs%3Alabel+%3Fsample+.+++++OPTIONAL+%7B++++++%3Fannotation+kupkb%3AhasDisease+%3FanalyteDiseaseURI+.+++++++%3FanalyteDiseaseURI+rdfs%3Alabel+%3Ffactor+.++++%7D+++%7D%7D))
@@ -109,14 +109,14 @@ SELECT DISTINCT ?geneProduct ?label ?species ?metid ?symbol ?expression ?sample 
 
 ## ChEMBL
 
-[<a name="tp3">ChEMBL</a>](https://www.ebi.ac.uk/chembl/) is one of the databases which also have a
+[<a name="tp4">ChEMBL</a>](https://www.ebi.ac.uk/chembl/) is one of the databases which also have a
 [SPARQL endpoint](https://www.ebi.ac.uk/rdf/services/sparql) [<a href="#citeref3">3</a>,<a href="#citeref4">4</a>].
 The database contains many biological activities of chemical compounds against many (protein)
 targets, as measured with assays.
 
 ### Bioassays related to a pathway
 
-We can list all assays for a certain pathway with the following federated query:
+We can list all <a name="tp5">assays</a> for a certain pathway with the following federated query:
 
 **SPARQL** [sparql/allChEMBLAssays.rq](sparql/allChEMBLAssays.code.html) ([run](http://sparql.wikipathways.org/?query=PREFIX+chembl%3A+%3Chttp%3A%2F%2Frdf.ebi.ac.uk%2Fterms%2Fchembl%23%3ESELECT+%3Fpathway+%3Fchembluniprot+%3Fassay+WHERE+%7B++%7B++++SELECT+DISTINCT++++++%3Fpathway++++++iri%28++++++++bif%3Aconcat%28%22http%3A%2F%2Fpurl.uniprot.org%2Funiprot%2F%22%2C++++++++bif%3Aregexp_substr%28%27http%3A%2F%2Fidentifiers.org%2Funiprot%2F%28.*%29%27%2C%3Funiprot%2C+1%29%29++++++%29+as+%3Fchembluniprot++++WHERE+%7B++++++VALUES+%3Ftype+%7B+wp%3AProtein+wp%3AGeneProduct+%7D++++++%3Fs+a+%3Ftype+%3B+++++++++wp%3AbdbUniprot+%3Funiprot+%3B+++++++++dcterms%3AisPartOf+%3Fpathway+.++++++%3Fpathway+a+wp%3APathway+.++++%7D+LIMIT+50++%7D++SERVICE+%3Chttp%3A%2F%2Fwww.ebi.ac.uk%2Frdf%2Fservices%2Fchembl%2Fsparql%3E++%7B++++%3Fassay+a+chembl%3AAssay+%3B+chembl%3AhasTarget%2Fchembl%3AhasTargetComponent%2Fchembl%3AtargetCmptXref+%3Fchembluniprot+.++%7D%7D))
 ```sparql

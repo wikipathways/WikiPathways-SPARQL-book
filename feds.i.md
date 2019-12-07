@@ -11,7 +11,7 @@ base of assay data [<cite>Q21198687</cite>,<cite>Q28260266</cite>].
 
 ### Assays for genes in WP1560
 
-The following query lists all assay data for genes in 
+The following query lists all <topic>assay</topic> data for genes in 
 [wikipathways:WP1560](https://identifiers.org/wikipathways:WP1560):
 
 <sparql>kupkbGene</sparql>
@@ -32,7 +32,7 @@ targets, as measured with assays.
 
 ### Bioassays related to a pathway
 
-We can list all assays for a certain pathway with the following federated query:
+We can list all <topic>assays</topic> for a certain pathway with the following federated query:
 
 <sparql>allChEMBLAssays</sparql>
 

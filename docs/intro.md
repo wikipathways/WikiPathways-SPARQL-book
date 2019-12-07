@@ -59,7 +59,7 @@ can be biologically interpreted and there are use case of the GPML at this momen
 
 ### Pathways
 
-Of course, central to a pathway database are the pathways:
+Of course, central to a <a name="tp3">pathway</a> database are the pathways:
 
 **SPARQL** [sparql/listAllPathways.rq](sparql/listAllPathways.code.html) ([run](http://sparql.wikipathways.org/?query=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+PREFIX+wp%3A+++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3ESELECT+DISTINCT+%28str%28%3Ftitle%29+as+%3Fpathway%29+%28str%28%3Flabel%29+as+%3Forganism%29WHERE+%7B+%3Fpw+dc%3Atitle+%3Ftitle+%3B+++++wp%3AorganismName+%3Flabel+.%7D))
 ```sparql
@@ -74,7 +74,7 @@ WHERE {
 
 ### Articles
 
-Similarly, we can list all PubMed identifiers with the pathways they occur in:
+Similarly, we can list all <a name="tp4">PubMed</a> identifiers with the pathways they occur in:
 
 **SPARQL** [sparql/listAllPubMedIDs.rq](sparql/listAllPubMedIDs.code.html) ([run](http://sparql.wikipathways.org/?query=PREFIX+wp%3A++++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3EPREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3ESELECT+DISTINCT+%3Fpathway+%3Fpubmed+WHERE+%7B++%3Fpubmed+a+++++++wp%3APublicationReference+%3B++++++++++dcterms%3AisPartOf+%3Fpathway%7D+ORDER+BY+%3Fpathway+LIMIT+500))
 ```sparql
