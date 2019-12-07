@@ -1,4 +1,4 @@
-<link href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css" rel="stylesheet">
+<link href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css" rel="stylesheet">
 # metadata.rq
 ### SPARQL
 ```sparql
@@ -32,8 +32,8 @@ select distinct ?dataset (str(?titleLit) as ?title) ?date ?license where {
   </tbody>
 </table>
 
-  <script src="http://code.jquery.com/jquery-1.12.1.js"></script>
-  <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
     $('tbody').sortable();
   </script>
