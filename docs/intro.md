@@ -48,6 +48,15 @@ Which gives as output:
   </tr>
 </table>
 
+# WikiPathways RDF Data Model
+
+The WikiPathways RDF content consists of two parts, the GPMLRDF which contains a direct
+RDF representation of the original GPML in which the WikiPathways are stored, and the
+WPRDF, which contains the interpretable biology stored in those pathways.
+
+This section describes both bits of RDF, because not all information in the GPML
+can be biologically interpreted and there are use case of the GPML at this moment too.
+
 ## References
 
 1. <a name="citeref1"></a>Pico AR, Kelder T, van Iersel MP, Hanspers K, Conklin BR, Evelo CT. WikiPathways: pathway editing for the people. PLoS Biol. 2008 Jul 22;6(7):e184.  doi:[10.1371/JOURNAL.PBIO.0060184](https://doi.org/10.1371/JOURNAL.PBIO.0060184) ([Scholia](https://tools.wmflabs.org/scholia/doi/10.1371/JOURNAL.PBIO.0060184))
