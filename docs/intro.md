@@ -57,6 +57,21 @@ WPRDF, which contains the interpretable biology stored in those pathways.
 This section describes both bits of RDF, because not all information in the GPML
 can be biologically interpreted and there are use case of the GPML at this moment too.
 
+### Pathways
+
+Of course, central to a pathway database are the pathways:
+
+**SPARQL** [sparql/listAllPathways.rq](sparql/listAllPathways.code.html) ([run](http://sparql.wikipathways.org/?query=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+PREFIX+wp%3A+++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3ESELECT+DISTINCT+%28str%28%3Ftitle%29+as+%3Fpathway%29+%28str%28%3Flabel%29+as+%3Forganism%29WHERE+%7B+%3Fpw+dc%3Atitle+%3Ftitle+%3B+++++wp%3AorganismName+%3Flabel+.%7D))
+```sparql
+PREFIX dc:      <http://purl.org/dc/elements/1.1/> 
+PREFIX wp:     <http://vocabularies.wikipathways.org/wp#>
+SELECT DISTINCT (str(?title) as ?pathway) (str(?label) as ?organism)
+WHERE {
+ ?pw dc:title ?title ;
+     wp:organismName ?label .
+}
+```
+
 ## References
 
 1. <a name="citeref1"></a>Pico AR, Kelder T, van Iersel MP, Hanspers K, Conklin BR, Evelo CT. WikiPathways: pathway editing for the people. PLoS Biol. 2008 Jul 22;6(7):e184.  doi:[10.1371/JOURNAL.PBIO.0060184](https://doi.org/10.1371/JOURNAL.PBIO.0060184) ([Scholia](https://tools.wmflabs.org/scholia/doi/10.1371/JOURNAL.PBIO.0060184))

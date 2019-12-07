@@ -33,6 +33,12 @@ WPRDF, which contains the interpretable biology stored in those pathways.
 This section describes both bits of RDF, because not all information in the GPML
 can be biologically interpreted and there are use case of the GPML at this moment too.
 
+### Pathways
+
+Of course, central to a pathway database are the pathways:
+
+<sparql>listAllPathways</sparql>
+
 ## References
 
 <references/>
