@@ -5,7 +5,7 @@ biochemical entities in biological processes [<cite>Q21092742</cite>,<cite>Q2809
 It can be downloaded and used in various formats, one of which is the Resource
 Description Framework (RDF) [<cite>Q26261238</cite>].
 
-The WikiPathways SPARQL endpoint can be found at [http://sparql.wikipathways.org/](http://sparql.wikipathways.org/).
+The WikiPathways SPARQL <topic>endpoint</topic> can be found at [http://sparql.wikipathways.org/](http://sparql.wikipathways.org/).
 SPARQL allows you to query much of the content of the the WikiPathways data in
 a machine readable way, which has been used, for example, in the Open&nbsp;PHACTS project
 [<cite>Q27061937</cite>,<cite>Q54404976</cite>].

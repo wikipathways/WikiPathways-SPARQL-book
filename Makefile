@@ -1,6 +1,6 @@
 SOURCES := intro.i.md index.i.md feds.i.md
 TARGETS := intro.md feds.md
-METAS := references.dat toc.txt
+METAS := references.dat toc.txt indexList.i.md
 
 SUBDIRS := sparql
 
@@ -11,6 +11,14 @@ all: ${SUBDIRS} ${METAS} ${TARGETS} index.md
 toc.txt: makeToC.groovy order.txt ${SOURCES}
 	@echo "Making the ToC"
 	@groovy makeToC.groovy > toc.txt
+
+indexList.i.md: topics.tsv makeIndex.groovy
+	@echo "Making the index"
+	@groovy makeIndex.groovy > indexList.i.md
+
+topics.tsv: ${SOURCES} findTopics.groovy
+	@echo "Extracting the topics"
+	@groovy findTopics.groovy . | sort > topics.tsv
 
 references.qids: findCitations.groovy
 	@echo "Finding the citations"
