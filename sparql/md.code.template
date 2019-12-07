@@ -1,6 +1,6 @@
 # %STEM%.%EXT%
 
-**Source code:**
+### Source code
 
 ```sparql
 %SOURCECODE%
@@ -8,6 +8,6 @@
 
 [Execute](%RUNURL%)
 
-**Output:**
+### Output
 
 %OUT%

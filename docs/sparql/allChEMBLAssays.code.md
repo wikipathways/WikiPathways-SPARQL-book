@@ -1,5 +1,5 @@
 # allChEMBLAssays.rq
-**Source code:**
+### Source code
 ```sparql
 PREFIX chembl: <http://rdf.ebi.ac.uk/terms/chembl#>
 
@@ -25,7 +25,7 @@ SELECT ?pathway ?chembluniprot ?assay WHERE {
 }
 ```
 [Execute](http://sparql.wikipathways.org/?query=PREFIX+chembl%3A+%3Chttp%3A%2F%2Frdf.ebi.ac.uk%2Fterms%2Fchembl%23%3ESELECT+%3Fpathway+%3Fchembluniprot+%3Fassay+WHERE+%7B++%7B++++SELECT+DISTINCT++++++%3Fpathway++++++iri%28++++++++bif%3Aconcat%28%22http%3A%2F%2Fpurl.uniprot.org%2Funiprot%2F%22%2C++++++++bif%3Aregexp_substr%28%27http%3A%2F%2Fidentifiers.org%2Funiprot%2F%28.*%29%27%2C%3Funiprot%2C+1%29%29++++++%29+as+%3Fchembluniprot++++WHERE+%7B++++++VALUES+%3Ftype+%7B+wp%3AProtein+wp%3AGeneProduct+%7D++++++%3Fs+a+%3Ftype+%3B+++++++++wp%3AbdbUniprot+%3Funiprot+%3B+++++++++dcterms%3AisPartOf+%3Fpathway+.++++++%3Fpathway+a+wp%3APathway+.++++%7D+LIMIT+50++%7D++SERVICE+%3Chttp%3A%2F%2Fwww.ebi.ac.uk%2Frdf%2Fservices%2Fchembl%2Fsparql%3E++%7B++++%3Fassay+a+chembl%3AAssay+%3B+chembl%3AhasTarget%2Fchembl%3AhasTargetComponent%2Fchembl%3AtargetCmptXref+%3Fchembluniprot+.++%7D%7D)
-**Output:**
+### Output
 <table>
   <tr>
     <td><b>pathway</b></td>
