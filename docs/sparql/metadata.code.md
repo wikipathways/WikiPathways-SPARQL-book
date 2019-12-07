@@ -1,3 +1,4 @@
+<link href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css" rel="stylesheet">
 # metadata.rq
 ### SPARQL
 ```sparql
@@ -21,13 +22,22 @@ select distinct ?dataset (str(?titleLit) as ?title) ?date ?license where {
     <td><b>date</b></td>
     <td><b>license</b></td>
   </tr>
-  <tr>
-    <td>http://data.wikipathways.org/20191110/rdf/</td>
-    <td>WikiPathways RDF 20191110</td>
-    <td>2019-11-10T10:49:50.340Z</td>
-    <td>http://creativecommons.org/publicdomain/zero/1.0/</td>
-  </tr>
+  <tbody>
+    <tr>
+      <td>http://data.wikipathways.org/20191110/rdf/</td>
+      <td>WikiPathways RDF 20191110</td>
+      <td>2019-11-10T10:49:50.340Z</td>
+      <td>http://creativecommons.org/publicdomain/zero/1.0/</td>
+    </tr>
+  </tbody>
 </table>
+
+  <script src="http://code.jquery.com/jquery-1.12.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    $('tbody').sortable();
+  </script>
+  
 ## Code examples
 ### curl
 ```shell
