@@ -1,5 +1,5 @@
 # listAllPathways.rq
-### Source code
+### SPARQL
 ```sparql
 PREFIX dc:      <http://purl.org/dc/elements/1.1/> 
 PREFIX wp:     <http://vocabularies.wikipathways.org/wp#>
@@ -8730,3 +8730,9 @@ WHERE {
     <td>Saccharomyces cerevisiae</td>
   </tr>
 </table>
+## Code examples
+### curl
+```shell
+curl -o listAllPathways.rq https://raw.githubusercontent.com/wikipathways/WikiPathways-SPARQL-book/master/sparql/listAllPathways.rq
+curl -H "Accept: " -G http://sparql.wikipathways.org/ --data-urlencode query@listAllPathways.rq
+```

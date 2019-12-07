@@ -1,5 +1,5 @@
 # kupkbGene.rq
-### Source code
+### SPARQL
 ```sparql
 PREFIX wp: <http://vocabularies.wikipathways.org/wp#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -19740,3 +19740,9 @@ SELECT DISTINCT ?geneProduct ?geneid ?genesymbol ?expression ?sample ?factor ?sp
     <td>kupkb:experiment/ying_sun_assay</td>
   </tr>
 </table>
+## Code examples
+### curl
+```shell
+curl -o kupkbGene.rq https://raw.githubusercontent.com/wikipathways/WikiPathways-SPARQL-book/master/sparql/kupkbGene.rq
+curl -H "Accept: " -G http://sparql.wikipathways.org/ --data-urlencode query@kupkbGene.rq
+```

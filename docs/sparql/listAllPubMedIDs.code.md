@@ -1,5 +1,5 @@
 # listAllPubMedIDs.rq
-### Source code
+### SPARQL
 ```sparql
 PREFIX wp:      <http://vocabularies.wikipathways.org/wp#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -2016,3 +2016,9 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
     <td>http://identifiers.org/pubmed/11340051</td>
   </tr>
 </table>
+## Code examples
+### curl
+```shell
+curl -o listAllPubMedIDs.rq https://raw.githubusercontent.com/wikipathways/WikiPathways-SPARQL-book/master/sparql/listAllPubMedIDs.rq
+curl -H "Accept: " -G http://sparql.wikipathways.org/ --data-urlencode query@listAllPubMedIDs.rq
+```

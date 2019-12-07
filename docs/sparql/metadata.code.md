@@ -1,5 +1,5 @@
 # metadata.rq
-### Source code
+### SPARQL
 ```sparql
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX void:    <http://rdfs.org/ns/void#>
@@ -28,3 +28,9 @@ select distinct ?dataset (str(?titleLit) as ?title) ?date ?license where {
     <td>http://creativecommons.org/publicdomain/zero/1.0/</td>
   </tr>
 </table>
+## Code examples
+### curl
+```shell
+curl -o metadata.rq https://raw.githubusercontent.com/wikipathways/WikiPathways-SPARQL-book/master/sparql/metadata.rq
+curl -H "Accept: " -G http://sparql.wikipathways.org/ --data-urlencode query@metadata.rq
+```

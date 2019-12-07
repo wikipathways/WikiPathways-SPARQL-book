@@ -1,5 +1,5 @@
 # allChEMBLAssays.rq
-### Source code
+### SPARQL
 ```sparql
 PREFIX chembl: <http://rdf.ebi.ac.uk/terms/chembl#>
 
@@ -113,3 +113,9 @@ SELECT ?pathway ?chembluniprot ?assay WHERE {
     <td>http://rdf.ebi.ac.uk/resource/chembl/assay/CHEMBL3875645</td>
   </tr>
 </table>
+## Code examples
+### curl
+```shell
+curl -o allChEMBLAssays.rq https://raw.githubusercontent.com/wikipathways/WikiPathways-SPARQL-book/master/sparql/allChEMBLAssays.rq
+curl -H "Accept: " -G http://sparql.wikipathways.org/ --data-urlencode query@allChEMBLAssays.rq
+```

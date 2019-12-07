@@ -1,5 +1,5 @@
 # kupkbMetabolite.rq
-### Source code
+### SPARQL
 ```sparql
 PREFIX wp: <http://vocabularies.wikipathways.org/wp#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -11036,3 +11036,9 @@ SELECT DISTINCT ?geneProduct ?label ?species ?metid ?symbol ?expression ?sample 
     <td>kupkb:experiment/vallabh_shah_assay</td>
   </tr>
 </table>
+## Code examples
+### curl
+```shell
+curl -o kupkbMetabolite.rq https://raw.githubusercontent.com/wikipathways/WikiPathways-SPARQL-book/master/sparql/kupkbMetabolite.rq
+curl -H "Accept: " -G http://sparql.wikipathways.org/ --data-urlencode query@kupkbMetabolite.rq
+```
