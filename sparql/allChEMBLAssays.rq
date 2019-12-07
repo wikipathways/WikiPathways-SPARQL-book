@@ -1,0 +1,22 @@
+PREFIX chembl: <http://rdf.ebi.ac.uk/terms/chembl#>
+
+SELECT ?pathway ?chembluniprot ?assay WHERE {
+  {
+    SELECT DISTINCT
+      ?pathway
+      iri(
+        bif:concat("http://purl.uniprot.org/uniprot/",
+        bif:regexp_substr('http://identifiers.org/uniprot/(.*)',?uniprot, 1))
+      ) as ?chembluniprot
+    WHERE {
+      VALUES ?type { wp:Protein wp:GeneProduct }
+      ?s a ?type ;
+         wp:bdbUniprot ?uniprot ;
+         dcterms:isPartOf ?pathway .
+      ?pathway a wp:Pathway .
+    } LIMIT 50
+  }
+  SERVICE <http://www.ebi.ac.uk/rdf/services/chembl/sparql>  {
+    ?assay a chembl:Assay ; chembl:hasTarget/chembl:hasTargetComponent/chembl:targetCmptXref ?chembluniprot .
+  }
+}

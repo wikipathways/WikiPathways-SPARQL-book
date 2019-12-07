@@ -1,6 +1,7 @@
 # Index
 
 
+ChEMBL [feds](feds.md#tp3)<br />
 endpoint [intro](intro.md#tp1)<br />
 federated SPARQL [feds](feds.md#tp1)<br />
 GPML [intro](intro.md#tp2)<br />

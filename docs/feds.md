@@ -107,9 +107,47 @@ SELECT DISTINCT ?geneProduct ?label ?species ?metid ?symbol ?expression ?sample 
 }
 ```
 
+## ChEMBL
+
+[<a name="tp3">ChEMBL</a>](https://www.ebi.ac.uk/chembl/) is one of the databases which also have a
+[SPARQL endpoint](https://www.ebi.ac.uk/rdf/services/sparql) [<a href="#citeref3">3</a>,<a href="#citeref4">4</a>].
+The database contains many biological activities of chemical compounds against many (protein)
+targets, as measured with assays.
+
+### Bioassays related to a pathway
+
+We can list all assays for a certain pathway with the following federated query:
+
+**SPARQL** [sparql/allChEMBLAssays.rq](sparql/allChEMBLAssays.code.html) ([run](http://sparql.wikipathways.org/?query=PREFIX+chembl%3A+%3Chttp%3A%2F%2Frdf.ebi.ac.uk%2Fterms%2Fchembl%23%3ESELECT+%3Fpathway+%3Fchembluniprot+%3Fassay+WHERE+%7B++%7B++++SELECT+DISTINCT++++++%3Fpathway++++++iri%28++++++++bif%3Aconcat%28%22http%3A%2F%2Fpurl.uniprot.org%2Funiprot%2F%22%2C++++++++bif%3Aregexp_substr%28%27http%3A%2F%2Fidentifiers.org%2Funiprot%2F%28.*%29%27%2C%3Funiprot%2C+1%29%29++++++%29+as+%3Fchembluniprot++++WHERE+%7B++++++VALUES+%3Ftype+%7B+wp%3AProtein+wp%3AGeneProduct+%7D++++++%3Fs+a+%3Ftype+%3B+++++++++wp%3AbdbUniprot+%3Funiprot+%3B+++++++++dcterms%3AisPartOf+%3Fpathway+.++++++%3Fpathway+a+wp%3APathway+.++++%7D+LIMIT+50++%7D++SERVICE+%3Chttp%3A%2F%2Fwww.ebi.ac.uk%2Frdf%2Fservices%2Fchembl%2Fsparql%3E++%7B++++%3Fassay+a+chembl%3AAssay+%3B+chembl%3AhasTarget%2Fchembl%3AhasTargetComponent%2Fchembl%3AtargetCmptXref+%3Fchembluniprot+.++%7D%7D))
+```sparql
+PREFIX chembl: <http://rdf.ebi.ac.uk/terms/chembl#>
+SELECT ?pathway ?chembluniprot ?assay WHERE {
+  {
+    SELECT DISTINCT
+      ?pathway
+      iri(
+        bif:concat("http://purl.uniprot.org/uniprot/",
+        bif:regexp_substr('http://identifiers.org/uniprot/(.*)',?uniprot, 1))
+      ) as ?chembluniprot
+    WHERE {
+      VALUES ?type { wp:Protein wp:GeneProduct }
+      ?s a ?type ;
+         wp:bdbUniprot ?uniprot ;
+         dcterms:isPartOf ?pathway .
+      ?pathway a wp:Pathway .
+    } LIMIT 50
+  }
+  SERVICE <http://www.ebi.ac.uk/rdf/services/chembl/sparql>  {
+    ?assay a chembl:Assay ; chembl:hasTarget/chembl:hasTargetComponent/chembl:targetCmptXref ?chembluniprot .
+  }
+}
+```
+
 ## References
 
 1. <a name="citeref1"></a>Jupp S, Klein J, Schanstra J, Stevens R. Developing a kidney and urinary pathway knowledge base. J Biomed Semantics. 2011;2 Suppl 2(Suppl 2):S7.  doi:[10.1186/2041-1480-2-S2-S7](https://doi.org/10.1186/2041-1480-2-S2-S7) ([Scholia](https://tools.wmflabs.org/scholia/doi/10.1186/2041-1480-2-S2-S7))
 2. <a name="citeref2"></a>Klein J, Jupp S, Moulos P, Fernandez M, Buffin-Meyer B, Casemayou A, et al. The KUPKB: a novel Web application to access multiomics data on kidney disease. FASEB J. 2012 May;26(5):2145–53.  doi:[10.1096/FJ.11-194381](https://doi.org/10.1096/FJ.11-194381) ([Scholia](https://tools.wmflabs.org/scholia/doi/10.1096/FJ.11-194381))
+3. <a name="citeref3"></a>Gaulton A, Hersey A, Nowotka M, Bento AP, Chambers J, Mendez D, et al. The ChEMBL database in 2017. NAR. 2017 Jan 4;45(D1):D945–54.  doi:[10.1093/NAR/GKW1074](https://doi.org/10.1093/NAR/GKW1074) ([Scholia](https://tools.wmflabs.org/scholia/doi/10.1093/NAR/GKW1074))
+4. <a name="citeref4"></a>Jupp S, Malone J, Bolleman J, Brandizi M, Brandizi M, Davies M, et al. The EBI RDF platform: linked open data for the life sciences. Bioinformatics. 2014 May 1;30(9):1338–9.  doi:[10.1093/BIOINFORMATICS/BTT765](https://doi.org/10.1093/BIOINFORMATICS/BTT765) ([Scholia](https://tools.wmflabs.org/scholia/doi/10.1093/BIOINFORMATICS/BTT765))
 
 
