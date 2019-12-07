@@ -39,6 +39,12 @@ Of course, central to a pathway database are the pathways:
 
 <sparql>listAllPathways</sparql>
 
+### Articles
+
+Similarly, we can list all PubMed identifiers with the pathways they occur in:
+
+<sparql>listAllPubMedIDs</sparql>
+
 ## References
 
 <references/>

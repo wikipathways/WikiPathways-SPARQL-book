@@ -1,0 +1,6 @@
+PREFIX wp:      <http://vocabularies.wikipathways.org/wp#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+SELECT DISTINCT ?pathway ?pubmed WHERE {
+  ?pubmed a       wp:PublicationReference ;
+          dcterms:isPartOf ?pathway
+} ORDER BY ?pathway LIMIT 500

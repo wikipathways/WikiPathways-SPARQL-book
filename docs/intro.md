@@ -72,6 +72,20 @@ WHERE {
 }
 ```
 
+### Articles
+
+Similarly, we can list all PubMed identifiers with the pathways they occur in:
+
+**SPARQL** [sparql/listAllPubMedIDs.rq](sparql/listAllPubMedIDs.code.html) ([run](http://sparql.wikipathways.org/?query=PREFIX+wp%3A++++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3EPREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3ESELECT+DISTINCT+%3Fpathway+%3Fpubmed+WHERE+%7B++%3Fpubmed+a+++++++wp%3APublicationReference+%3B++++++++++dcterms%3AisPartOf+%3Fpathway%7D+ORDER+BY+%3Fpathway+LIMIT+500))
+```sparql
+PREFIX wp:      <http://vocabularies.wikipathways.org/wp#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+SELECT DISTINCT ?pathway ?pubmed WHERE {
+  ?pubmed a       wp:PublicationReference ;
+          dcterms:isPartOf ?pathway
+} ORDER BY ?pathway LIMIT 500
+```
+
 ## References
 
 1. <a name="citeref1"></a>Pico AR, Kelder T, van Iersel MP, Hanspers K, Conklin BR, Evelo CT. WikiPathways: pathway editing for the people. PLoS Biol. 2008 Jul 22;6(7):e184.  doi:[10.1371/JOURNAL.PBIO.0060184](https://doi.org/10.1371/JOURNAL.PBIO.0060184) ([Scholia](https://tools.wmflabs.org/scholia/doi/10.1371/JOURNAL.PBIO.0060184))
