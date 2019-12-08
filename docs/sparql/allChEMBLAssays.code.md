@@ -1,4 +1,5 @@
 # allChEMBLAssays.rq
+**Code examples:** [curl](#curl)
 ### SPARQL
 ```sparql
 PREFIX chembl: <http://rdf.ebi.ac.uk/terms/chembl#>

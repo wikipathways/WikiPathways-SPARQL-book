@@ -1,4 +1,5 @@
 # listAllPathways.rq
+**Code examples:** [curl](#curl)
 ### SPARQL
 ```sparql
 PREFIX dc:      <http://purl.org/dc/elements/1.1/> 

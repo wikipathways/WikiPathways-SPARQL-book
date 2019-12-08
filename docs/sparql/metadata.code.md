@@ -1,4 +1,5 @@
 # metadata.rq
+**Code examples:** [curl](#curl)
 ### SPARQL
 ```sparql
 PREFIX dcterms: <http://purl.org/dc/terms/>
