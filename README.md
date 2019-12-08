@@ -8,7 +8,7 @@ compiled Markdown sources.
 
 - Groovy
 - nodejs
-- citation-js
+- citation-js (see doi:[10.7717/peerj-cs.214](https://doi.org/10.7717/peerj-cs.214))
 - make
 - curl (optional, but handy)
 
