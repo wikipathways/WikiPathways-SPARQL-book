@@ -32,3 +32,12 @@ make
 
 The website makes use of GitHub pages, and GitHub automatically converts
 the `.md` files in the `docs/` folder to HTML when you push to the repository.
+
+## Adding content
+
+1. develop a new SPARQL query (and test it)
+2. create a new `.rq` file in the `sparql/` folder
+3. add content to one of the `.i.md` files and embed the SPARQL
+   with the instruction `<sparql>foo</sparql>` for the `sparql/foo.rq` query
+4. compile the code (see above)
+5. make a pull request
