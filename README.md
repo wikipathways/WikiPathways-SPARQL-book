@@ -41,3 +41,13 @@ the `.md` files in the `docs/` folder to HTML when you push to the repository.
    with the instruction `<sparql>foo</sparql>` for the `sparql/foo.rq` query
 4. compile the code (see above)
 5. make a pull request
+
+### Pre-Markdown instructions
+
+The following instructions can be used in the `.i.md` files:
+
+- `<topic></topic>` to mark a word or term as topic, making it appear in the
+  [indexList](docs/indexList.md)
+- `<sparql></sparql>` on a single line embeds the SPARQL query at that position
+- `<cite></cite>` for adding a reference, using the Wikidata Q-identifier for
+  that paper (or book or ...)
