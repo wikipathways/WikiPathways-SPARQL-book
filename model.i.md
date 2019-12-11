@@ -40,6 +40,14 @@ DataNodes have the following predicates:
 
 <sparql>listAllDataNodePredicates</sparql>
 
+### Metabolites
+
+Metabolites are typed a `wp:Metabolite`, a subclass of `wp:DataNode`. They do have all
+predicates that data nodes have. If we just look at metabolites, this subset of data nodes
+has these predicates:
+
+<sparql>listAllMetabolitePredicates</sparql>
+
 ## References
 
 <references/>

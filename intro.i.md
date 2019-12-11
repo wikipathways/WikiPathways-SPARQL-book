@@ -35,6 +35,17 @@ We can list the number of pathways for each species available in WikiPathways:
 
 <sparql>pathwayCountBySpecies</sparql>
 
+### Number of metabolites per species
+
+Counting metabolites is tricky, as metabolites that are biologically the same (e.g. different
+charge startes) can have different identifiers. A further complications is that not all metabolites
+in WikiPathways always have stereochemistry defined, for example because it is biologically
+obvious, as for amino acids. But we can count the number of InChIKeys of the neutral compounds
+to get a reasonable estimate:
+
+<sparql>metaboliteCountBySpecies</sparql>
+
+
 ## References
 
 <references/>
