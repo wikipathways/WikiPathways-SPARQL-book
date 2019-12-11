@@ -3,6 +3,7 @@ PREFIX wp:     <http://vocabularies.wikipathways.org/wp#>
 
 SELECT DISTINCT (str(?title) as ?pathway) (str(?label) as ?organism)
 WHERE {
- ?pw dc:title ?title ;
+ ?pw a wp:Pathway ;
+     dc:title ?title ;
      wp:organismName ?label .
 }
