@@ -1,3 +1,4 @@
+<a name="sec:intro"></a>
 # Introduction
 
 WikiPathways is a biological pathway database and describes the interactions between

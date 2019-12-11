@@ -1,12 +1,16 @@
 SOURCES := intro.i.md index.i.md feds.i.md
 TARGETS := intro.md feds.md indexList.md
-METAS := references.dat toc.txt indexList.i.md
+METAS := references.dat toc.txt indexList.i.md sections.txt
 
 SUBDIRS := sparql
 
 all: ${SUBDIRS} ${METAS} ${TARGETS} index.md
 	@mv ${TARGETS} docs/
 	@cp sparql/*.code.md docs/sparql/
+
+sections.txt: order.txt ${SOURCES}
+	@echo "Indexing the sections"
+	@groovy findSections.groovy > sections.txt
 
 toc.txt: makeToC.groovy order.txt ${SOURCES}
 	@echo "Making the ToC"

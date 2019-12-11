@@ -13,10 +13,39 @@ bibLines.each { String line ->
   bibliography.put(fields[0], fields[1])
 }
 
+chapterCounters = new HashMap<String,String>();
+chapterCounter = 0
+appendixCounter = 0
+def chapterLines = new File("order.txt").readLines()
+chapterLines.each { String line ->
+  if (line.startsWith("app")) {
+    appendixCounter++
+    chapterCounters.put(line, (char)(64+appendixCounter))
+  } else {
+    chapterCounter++
+    chapterCounters.put(line, "" + chapterCounter)
+  }
+}
+
+sectionChapters = new HashMap<String,String>();
+sectionNumbers = new HashMap<String,String>();
+def secdataLines = new File("sections.txt").readLines()
+secdataLines.each { String line ->
+  data = line.split("\t")
+  label = data[0]
+  chapter = data[1]
+  number = data[2]
+  sectionChapters.put(data[0], data[1])
+  sectionNumbers.put(data[0], data[2])
+}
+
 references = new HashMap<String,String>();
 bibList = "";
 refCounter = 0;
 topicCounter = 0;
+
+context = input.substring(0, input.indexOf("."))
+currentChapterCounter = chapterCounters.get(context)
 
 lines = new File(input).readLines()
 lines.each { String line ->
@@ -28,6 +57,10 @@ lines.each { String line ->
     def instruction = new XmlSlurper().parseText(line)
     def srcLines = new File("sparql/${instruction.text()}.out").readLines()
     srcLines.each { String srcLine -> println srcLine }
+  } else if (line.startsWith("<section")) {
+    def instruction = new XmlSlurper().parseText(line)
+    println "<a name=\"sec:${instruction.@label}\"></a>"
+    println "${instruction.@level} ${instruction.text()}"
   } else if (line.startsWith("<toc>")) {
     def instruction = new XmlSlurper().parseText(line)
     def srcLines = new File("${instruction.text()}").readLines()
@@ -69,6 +102,21 @@ lines.each { String line ->
       replacement = topicsInstruction.text()
       replacement = "<a name=\"tp${topicCounter}\">" + replacement + "</a>"
       line = line.substring(0, topicStart) + replacement + line.substring(topicEnd+8)
+    }
+    while (line.contains("<xref")) {
+      xrefStart = line.indexOf("<xref")
+      xrefEnd = line.indexOf("</xref>")
+      xrefXML = line.substring(xrefStart, xrefEnd+7)
+      def xrefInstruction = new XmlSlurper().parseText(xrefXML)
+      xrefname = xrefInstruction.text()
+      if (sectionChapters.containsKey(xrefname)) {
+        doc = ""
+        if (sectionChapters.get(xrefname) != context) doc = sectionChapters.get(xrefname) + ".md"
+        replacement = "[${sectionNumbers.get(xrefname)}](${doc}#sec:${xrefname})"
+      } else {
+        replacement = "??"
+      }
+      line = line.substring(0, xrefStart) + replacement + line.substring(xrefEnd+7)
     }
     println line
   }

@@ -1,4 +1,4 @@
-# Introduction
+<section label="intro" level="#">Introduction</section>
 
 WikiPathways is a biological pathway database and describes the interactions between
 biochemical entities in biological processes [<cite>Q21092742</cite>,<cite>Q28090976</cite>,<cite>Q24082733</cite>,<cite>Q42896569</cite>].

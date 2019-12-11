@@ -51,3 +51,5 @@ The following instructions can be used in the `.i.md` files:
 - `<sparql></sparql>` on a single line embeds the SPARQL query at that position
 - `<cite></cite>` for adding a reference, using the Wikidata Q-identifier for
   that paper (or book or ...)
+- `<section label="intro" level="#">Introduction</section>` to make a section
+  referencable, and use `<xref>intro</xref>` to refer to that section.
