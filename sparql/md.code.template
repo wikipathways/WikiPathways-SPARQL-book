@@ -20,5 +20,5 @@
 
 ```shell
 curl -o %STEM%.%EXT% https://raw.githubusercontent.com/wikipathways/WikiPathways-SPARQL-book/master/sparql/%STEM%.%EXT%
-curl -H "Accept: " -G http://sparql.wikipathways.org/ --data-urlencode query@%STEM%.%EXT%
+curl -H "Accept: text/tab-separated-values" -G http://sparql.wikipathways.org/ --data-urlencode query@%STEM%.%EXT%
 ```
