@@ -56,6 +56,41 @@ statistics.
 
 ### Number of pathways per species
 
+We can list the number of pathways for each species available in WikiPathways:
+
+**SPARQL** [sparql/pathwayCountBySpecies.rq](sparql/pathwayCountBySpecies.code.html) ([run](http://sparql.wikipathways.org/?query=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+PREFIX+wp%3A+%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3ESELECT+DISTINCT+%3Forganism+%28str%28%3Flabel%29+as+%3Fname%29+%28count%28%3Fpw%29+as+%3FpathwayCount%29WHERE+%7B++++%3Fpw+dc%3Atitle+%3Ftitle+%3B++++++wp%3Aorganism+%3Forganism+%3B++++++wp%3AorganismName+%3Flabel+.%7DORDER+BY+DESC%28%3FpathwayCount%29))
+```sparql
+PREFIX dc:      <http://purl.org/dc/elements/1.1/> 
+PREFIX wp: <http://vocabularies.wikipathways.org/wp#>
+SELECT DISTINCT ?organism (str(?label) as ?name) (count(?pw) as ?pathwayCount)
+WHERE {
+    ?pw dc:title ?title ;
+      wp:organism ?organism ;
+      wp:organismName ?label .
+}
+ORDER BY DESC(?pathwayCount)
+```
+
+### Number of metabolites per species
+
+Counting metabolites is tricky, as metabolites that are biologically the same (e.g. different
+charge startes) can have different identifiers. A further complications is that not all metabolites
+in WikiPathways always have stereochemistry defined, for example because it is biologically
+obvious, as for amino acids. But we can count the number of InChIKeys of the neutral compounds
+to get a reasonable estimate:
+
+**SPARQL** [sparql/metaboliteCountBySpecies.rq](sparql/metaboliteCountBySpecies.code.html) ([run](http://sparql.wikipathways.org/?query=PREFIX+gpml%3A++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fgpml%23%3EPREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3EPREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3EPREFIX+rdf%3A+++++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+select+%28count%28distinct+%3Fninchi%29+as+%3Fcount%29+%28str%28%3Flabel%29+as+%3Fspecies%29+where+%7B++%3Fmetabolite+a+wp%3AMetabolite+%3B++++++++dcterms%3AisPartOf+%3Fpw+.++%3Fpw+wp%3AorganismName+%3Flabel+.%7D+GROUP+BY+%3Flabel+ORDER+BY+DESC%28%3Fcount%29))
+```sparql
+PREFIX gpml:    <http://vocabularies.wikipathways.org/gpml#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX dc:      <http://purl.org/dc/elements/1.1/>
+PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+select (count(distinct ?ninchi) as ?count) (str(?label) as ?species) where {
+  ?metabolite a wp:Metabolite ;
+    dcterms:isPartOf ?pw .
+  ?pw wp:organismName ?label .
+} GROUP BY ?label ORDER BY DESC(?count)
+```
 
 
 ## References

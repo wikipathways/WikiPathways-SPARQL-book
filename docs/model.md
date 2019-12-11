@@ -91,6 +91,22 @@ WHERE {
 }
 ```
 
+### Metabolites
+
+Metabolites are typed a `wp:Metabolite`, a subclass of `wp:DataNode`. They do have all
+predicates that data nodes have. If we just look at metabolites, this subset of data nodes
+has these predicates:
+
+**SPARQL** [sparql/listAllMetabolitePredicates.rq](sparql/listAllMetabolitePredicates.code.html) ([run](http://sparql.wikipathways.org/?query=PREFIX+wp%3A+++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3ESELECT+DISTINCT+%3FpredicateWHERE+%7B+%3Fpw+a+wp%3AMetabolite+%3B+++++%3Fpredicate+%5B%5D+.%7D))
+```sparql
+PREFIX wp:     <http://vocabularies.wikipathways.org/wp#>
+SELECT DISTINCT ?predicate
+WHERE {
+ ?pw a wp:Metabolite ;
+     ?predicate [] .
+}
+```
+
 ## References
 
 
