@@ -31,7 +31,9 @@ statistics.
 
 ### Number of pathways per species
 
+We can list the number of pathways for each species available in WikiPathways:
 
+<sparql>pathwayCountBySpecies</sparql>
 
 ## References
 

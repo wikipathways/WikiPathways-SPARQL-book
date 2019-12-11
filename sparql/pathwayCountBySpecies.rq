@@ -1,0 +1,10 @@
+PREFIX dc:      <http://purl.org/dc/elements/1.1/> 
+PREFIX wp: <http://vocabularies.wikipathways.org/wp#>
+
+SELECT DISTINCT ?organism (str(?label) as ?name) (count(?pw) as ?pathwayCount)
+WHERE {
+    ?pw dc:title ?title ;
+      wp:organism ?organism ;
+      wp:organismName ?label .
+}
+ORDER BY DESC(?pathwayCount)
