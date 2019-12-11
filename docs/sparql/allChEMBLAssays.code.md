@@ -118,5 +118,5 @@ SELECT ?pathway ?chembluniprot ?assay WHERE {
 ### curl
 ```shell
 curl -o allChEMBLAssays.rq https://raw.githubusercontent.com/wikipathways/WikiPathways-SPARQL-book/master/sparql/allChEMBLAssays.rq
-curl -H "Accept: " -G http://sparql.wikipathways.org/ --data-urlencode query@allChEMBLAssays.rq
+curl -H "Accept: text/tab-separated-values" -G http://sparql.wikipathways.org/ --data-urlencode query@allChEMBLAssays.rq
 ```

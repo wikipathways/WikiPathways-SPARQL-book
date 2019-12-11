@@ -33,5 +33,5 @@ select distinct ?dataset (str(?titleLit) as ?title) ?date ?license where {
 ### curl
 ```shell
 curl -o metadata.rq https://raw.githubusercontent.com/wikipathways/WikiPathways-SPARQL-book/master/sparql/metadata.rq
-curl -H "Accept: " -G http://sparql.wikipathways.org/ --data-urlencode query@metadata.rq
+curl -H "Accept: text/tab-separated-values" -G http://sparql.wikipathways.org/ --data-urlencode query@metadata.rq
 ```

@@ -2021,5 +2021,5 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
 ### curl
 ```shell
 curl -o listAllPubMedIDs.rq https://raw.githubusercontent.com/wikipathways/WikiPathways-SPARQL-book/master/sparql/listAllPubMedIDs.rq
-curl -H "Accept: " -G http://sparql.wikipathways.org/ --data-urlencode query@listAllPubMedIDs.rq
+curl -H "Accept: text/tab-separated-values" -G http://sparql.wikipathways.org/ --data-urlencode query@listAllPubMedIDs.rq
 ```

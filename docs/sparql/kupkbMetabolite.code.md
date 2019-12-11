@@ -11041,5 +11041,5 @@ SELECT DISTINCT ?geneProduct ?label ?species ?metid ?symbol ?expression ?sample 
 ### curl
 ```shell
 curl -o kupkbMetabolite.rq https://raw.githubusercontent.com/wikipathways/WikiPathways-SPARQL-book/master/sparql/kupkbMetabolite.rq
-curl -H "Accept: " -G http://sparql.wikipathways.org/ --data-urlencode query@kupkbMetabolite.rq
+curl -H "Accept: text/tab-separated-values" -G http://sparql.wikipathways.org/ --data-urlencode query@kupkbMetabolite.rq
 ```

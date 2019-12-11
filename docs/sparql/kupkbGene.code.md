@@ -19745,5 +19745,5 @@ SELECT DISTINCT ?geneProduct ?geneid ?genesymbol ?expression ?sample ?factor ?sp
 ### curl
 ```shell
 curl -o kupkbGene.rq https://raw.githubusercontent.com/wikipathways/WikiPathways-SPARQL-book/master/sparql/kupkbGene.rq
-curl -H "Accept: " -G http://sparql.wikipathways.org/ --data-urlencode query@kupkbGene.rq
+curl -H "Accept: text/tab-separated-values" -G http://sparql.wikipathways.org/ --data-urlencode query@kupkbGene.rq
 ```

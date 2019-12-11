@@ -7,11 +7,12 @@ PREFIX wp:     <http://vocabularies.wikipathways.org/wp#>
 
 SELECT DISTINCT (str(?title) as ?pathway) (str(?label) as ?organism)
 WHERE {
- ?pw dc:title ?title ;
+ ?pw a wp:Pathway ;
+     dc:title ?title ;
      wp:organismName ?label .
 }
 ```
-[Execute](http://sparql.wikipathways.org/?query=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+PREFIX+wp%3A+++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3ESELECT+DISTINCT+%28str%28%3Ftitle%29+as+%3Fpathway%29+%28str%28%3Flabel%29+as+%3Forganism%29WHERE+%7B+%3Fpw+dc%3Atitle+%3Ftitle+%3B+++++wp%3AorganismName+%3Flabel+.%7D)
+[Execute](http://sparql.wikipathways.org/?query=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+PREFIX+wp%3A+++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3ESELECT+DISTINCT+%28str%28%3Ftitle%29+as+%3Fpathway%29+%28str%28%3Flabel%29+as+%3Forganism%29WHERE+%7B+%3Fpw+a+wp%3APathway+%3B+++++dc%3Atitle+%3Ftitle+%3B+++++wp%3AorganismName+%3Flabel+.%7D)
 ### Output
 <table>
   <tr>
@@ -8735,5 +8736,5 @@ WHERE {
 ### curl
 ```shell
 curl -o listAllPathways.rq https://raw.githubusercontent.com/wikipathways/WikiPathways-SPARQL-book/master/sparql/listAllPathways.rq
-curl -H "Accept: " -G http://sparql.wikipathways.org/ --data-urlencode query@listAllPathways.rq
+curl -H "Accept: text/tab-separated-values" -G http://sparql.wikipathways.org/ --data-urlencode query@listAllPathways.rq
 ```
