@@ -1,0 +1,7 @@
+PREFIX wp:     <http://vocabularies.wikipathways.org/wp#>
+
+SELECT DISTINCT ?predicate
+WHERE {
+ ?pw a wp:DataNode ;
+     ?predicate [] .
+}

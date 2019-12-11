@@ -54,6 +54,18 @@ Articles in the WPRDF are of type `wp:PublicationReference` and have the followi
 
 <sparql>listAllArticleProperties</sparql>
 
+### Genes, proteins, and metabolites
+
+Pathways contains biological entities, genes, proteins, metabolite, complexes, and more.
+Even pathways themselves can be entities in pathways. All entities are represented in the
+data model as `wp:DataNode`s. Because there are so many, we will here list only 100 data nodes:
+
+<sparql>list100DataNodes</sparql>
+
+DataNodes have the following predicates:
+
+<sparql>listAllDataNodePredicates</sparql>
+
 ## References
 
 <references/>
