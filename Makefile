@@ -1,5 +1,5 @@
-SOURCES := intro.i.md index.i.md feds.i.md
-TARGETS := intro.md feds.md indexList.md
+SOURCES := intro.i.md index.i.md model.i.md feds.i.md
+TARGETS := intro.md model.md feds.md indexList.md
 METAS := references.dat toc.txt indexList.i.md sections.txt
 
 SUBDIRS := sparql

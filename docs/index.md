@@ -18,15 +18,17 @@ Wishes, comments, and pull requests can be send to
 
 1. [Introduction](intro.md) <br />
 1.1. [Metadata queries](intro.md#metadata-queries) <br />
-1.2. [WikiPathways RDF Data Model](intro.md#wikipathways-rdf-data-model) <br />
-1.2.1. [Pathways](intro.md#pathways) <br />
-1.2.2. [Articles](intro.md#articles) <br />
-1.2.3. [Genes, proteins, and metabolites](intro.md#genes,-proteins,-and-metabolites) <br />
-2. [Federated Queries](feds.md) <br />
-2.1. [The Kidney & Urinary Pathway Knowledge Base](feds.md#the-kidney-&-urinary-pathway-knowledge-base) <br />
-2.1.1. [Assays for genes in WP1560](feds.md#assays-for-genes-in-wp1560) <br />
-2.1.2. [Assays for metabolites in WP3604](feds.md#assays-for-metabolites-in-wp3604) <br />
-2.2. [ChEMBL](feds.md#chembl) <br />
-2.2.1. [Bioassays related to a pathway](feds.md#bioassays-related-to-a-pathway) <br />
+1.2. [Statistics](intro.md#statistics) <br />
+1.2.1. [Number of pathways per species](intro.md#number-of-pathways-per-species) <br />
+2. [WikiPathways RDF Data Model](model.md) <br />
+2.1. [Pathways](model.md#pathways) <br />
+2.2. [Articles](model.md#articles) <br />
+2.3. [Genes, proteins, and metabolites](model.md#genes,-proteins,-and-metabolites) <br />
+3. [Federated Queries](feds.md) <br />
+3.1. [The Kidney & Urinary Pathway Knowledge Base](feds.md#the-kidney-&-urinary-pathway-knowledge-base) <br />
+3.1.1. [Assays for genes in WP1560](feds.md#assays-for-genes-in-wp1560) <br />
+3.1.2. [Assays for metabolites in WP3604](feds.md#assays-for-metabolites-in-wp3604) <br />
+3.2. [ChEMBL](feds.md#chembl) <br />
+3.2.1. [Bioassays related to a pathway](feds.md#bioassays-related-to-a-pathway) <br />
 
 [Index](indexList.md) <br />
