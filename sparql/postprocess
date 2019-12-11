@@ -43,6 +43,7 @@ mdTypes.add("code");
 def srcLines = new File(srcFile).readLines()
 unencodedSPARQL = ""
 srcLines.each { String srcLine -> unencodedSPARQL += srcLine }
+unencodedSPARQL = unencodedSPARQL.replace("\n", " ")
 encodedSPARQL = java.net.URLEncoder.encode(unencodedSPARQL, "UTF-8")
 runURL = "http://sparql.wikipathways.org/?query=" + encodedSPARQL
 
