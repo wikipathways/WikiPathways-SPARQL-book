@@ -35,15 +35,24 @@ can be biologically interpreted and there are use case of the GPML at this momen
 
 ### Pathways
 
-Of course, central to a <topic>pathway</topic> database are the pathways:
+Of course, central to a <topic>pathway</topic> database are the pathways. Pathways in the WPRDF
+are of type `wp:Pathway`:
 
 <sparql>listAllPathways</sparql>
+
+Resources of this type have the following RDF predicates:
+
+<sparql>listAllPathwayProperties</sparql>
 
 ### Articles
 
 Similarly, we can list all <topic>PubMed</topic> identifiers with the pathways they occur in:
 
 <sparql>listAllPubMedIDs</sparql>
+
+Articles in the WPRDF are of type `wp:PublicationReference` and have the following predicates:
+
+<sparql>listAllArticleProperties</sparql>
 
 ## References
 
