@@ -76,6 +76,8 @@ for (int type=0; type<mdTypes.size(); type++) {
         srcLines = new File(runClass + ".out").readLines()
         srcLines.each { String srcLine -> mdWriter.write(srcLine + "\n") }
         line = ""
+      } else {
+        line = line + "\n";
       }
       if (line.contains("%RUNURL%")) {
         line = line.replace("%RUNURL%", runURL);

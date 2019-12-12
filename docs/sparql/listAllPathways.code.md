@@ -1,5 +1,8 @@
 # listAllPathways.rq
-**Code examples:** [curl](#curl)### SPARQL```sparqlPREFIX dc:      <http://purl.org/dc/elements/1.1/> 
+**Code examples:** [curl](#curl)
+### SPARQL
+```sparql
+PREFIX dc:      <http://purl.org/dc/elements/1.1/> 
 PREFIX wp:     <http://vocabularies.wikipathways.org/wp#>
 
 SELECT DISTINCT (str(?title) as ?pathway) (str(?label) as ?organism)
@@ -8,9 +11,12 @@ WHERE {
      dc:title ?title ;
      wp:organismName ?label .
 }
-```[Execute](http://sparql.wikipathways.org/?query=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+%0APREFIX+wp%3A+++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%28str%28%3Ftitle%29+as+%3Fpathway%29+%28str%28%3Flabel%29+as+%3Forganism%29%0AWHERE+%7B%0A+%3Fpw+a+wp%3APathway+%3B%0A+++++dc%3Atitle+%3Ftitle+%3B%0A+++++wp%3AorganismName+%3Flabel+.%0A%7D%0A) [Edit](http://sparql.wikipathways.org/?qtxt=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+%0APREFIX+wp%3A+++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%28str%28%3Ftitle%29+as+%3Fpathway%29+%28str%28%3Flabel%29+as+%3Forganism%29%0AWHERE+%7B%0A+%3Fpw+a+wp%3APathway+%3B%0A+++++dc%3Atitle+%3Ftitle+%3B%0A+++++wp%3AorganismName+%3Flabel+.%0A%7D%0A)
+```
+[Execute](http://sparql.wikipathways.org/?query=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+%0APREFIX+wp%3A+++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%28str%28%3Ftitle%29+as+%3Fpathway%29+%28str%28%3Flabel%29+as+%3Forganism%29%0AWHERE+%7B%0A+%3Fpw+a+wp%3APathway+%3B%0A+++++dc%3Atitle+%3Ftitle+%3B%0A+++++wp%3AorganismName+%3Flabel+.%0A%7D%0A) [Edit](http://sparql.wikipathways.org/?qtxt=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+%0APREFIX+wp%3A+++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%28str%28%3Ftitle%29+as+%3Fpathway%29+%28str%28%3Flabel%29+as+%3Forganism%29%0AWHERE+%7B%0A+%3Fpw+a+wp%3APathway+%3B%0A+++++dc%3Atitle+%3Ftitle+%3B%0A+++++wp%3AorganismName+%3Flabel+.%0A%7D%0A)
 
-### Output<table>
+
+### Output
+<table>
   <tr>
     <td><b>pathway</b></td>
     <td><b>organism</b></td>
@@ -8728,6 +8734,9 @@ WHERE {
     <td>Saccharomyces cerevisiae</td>
   </tr>
 </table>
-## Code examples### curl```shellcurl -o listAllPathways.rq https://raw.githubusercontent.com/wikipathways/WikiPathways-SPARQL-book/master/sparql/listAllPathways.rq
+## Code examples
+### curl
+```shell
+curl -o listAllPathways.rq https://raw.githubusercontent.com/wikipathways/WikiPathways-SPARQL-book/master/sparql/listAllPathways.rq
 curl -H "Accept: text/tab-separated-values" -G http://sparql.wikipathways.org/ --data-urlencode query@listAllPathways.rq
 ```

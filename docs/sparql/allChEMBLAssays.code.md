@@ -1,5 +1,8 @@
 # allChEMBLAssays.rq
-**Code examples:** [curl](#curl)### SPARQL```sparqlPREFIX chembl: <http://rdf.ebi.ac.uk/terms/chembl#>
+**Code examples:** [curl](#curl)
+### SPARQL
+```sparql
+PREFIX chembl: <http://rdf.ebi.ac.uk/terms/chembl#>
 
 SELECT ?pathway ?chembluniprot ?assay WHERE {
   {
@@ -21,9 +24,12 @@ SELECT ?pathway ?chembluniprot ?assay WHERE {
     ?assay a chembl:Assay ; chembl:hasTarget/chembl:hasTargetComponent/chembl:targetCmptXref ?chembluniprot .
   }
 }
-```[Execute](http://sparql.wikipathways.org/?query=PREFIX+chembl%3A+%3Chttp%3A%2F%2Frdf.ebi.ac.uk%2Fterms%2Fchembl%23%3E%0A%0ASELECT+%3Fpathway+%3Fchembluniprot+%3Fassay+WHERE+%7B%0A++%7B%0A++++SELECT+DISTINCT%0A++++++%3Fpathway%0A++++++iri%28%0A++++++++bif%3Aconcat%28%22http%3A%2F%2Fpurl.uniprot.org%2Funiprot%2F%22%2C%0A++++++++bif%3Aregexp_substr%28%27http%3A%2F%2Fidentifiers.org%2Funiprot%2F%28.*%29%27%2C%3Funiprot%2C+1%29%29%0A++++++%29+as+%3Fchembluniprot%0A++++WHERE+%7B%0A++++++VALUES+%3Ftype+%7B+wp%3AProtein+wp%3AGeneProduct+%7D%0A++++++%3Fs+a+%3Ftype+%3B%0A+++++++++wp%3AbdbUniprot+%3Funiprot+%3B%0A+++++++++dcterms%3AisPartOf+%3Fpathway+.%0A++++++%3Fpathway+a+wp%3APathway+.%0A++++%7D+LIMIT+50%0A++%7D%0A++SERVICE+%3Chttp%3A%2F%2Fwww.ebi.ac.uk%2Frdf%2Fservices%2Fchembl%2Fsparql%3E++%7B%0A++++%3Fassay+a+chembl%3AAssay+%3B+chembl%3AhasTarget%2Fchembl%3AhasTargetComponent%2Fchembl%3AtargetCmptXref+%3Fchembluniprot+.%0A++%7D%0A%7D%0A) [Edit](http://sparql.wikipathways.org/?qtxt=PREFIX+chembl%3A+%3Chttp%3A%2F%2Frdf.ebi.ac.uk%2Fterms%2Fchembl%23%3E%0A%0ASELECT+%3Fpathway+%3Fchembluniprot+%3Fassay+WHERE+%7B%0A++%7B%0A++++SELECT+DISTINCT%0A++++++%3Fpathway%0A++++++iri%28%0A++++++++bif%3Aconcat%28%22http%3A%2F%2Fpurl.uniprot.org%2Funiprot%2F%22%2C%0A++++++++bif%3Aregexp_substr%28%27http%3A%2F%2Fidentifiers.org%2Funiprot%2F%28.*%29%27%2C%3Funiprot%2C+1%29%29%0A++++++%29+as+%3Fchembluniprot%0A++++WHERE+%7B%0A++++++VALUES+%3Ftype+%7B+wp%3AProtein+wp%3AGeneProduct+%7D%0A++++++%3Fs+a+%3Ftype+%3B%0A+++++++++wp%3AbdbUniprot+%3Funiprot+%3B%0A+++++++++dcterms%3AisPartOf+%3Fpathway+.%0A++++++%3Fpathway+a+wp%3APathway+.%0A++++%7D+LIMIT+50%0A++%7D%0A++SERVICE+%3Chttp%3A%2F%2Fwww.ebi.ac.uk%2Frdf%2Fservices%2Fchembl%2Fsparql%3E++%7B%0A++++%3Fassay+a+chembl%3AAssay+%3B+chembl%3AhasTarget%2Fchembl%3AhasTargetComponent%2Fchembl%3AtargetCmptXref+%3Fchembluniprot+.%0A++%7D%0A%7D%0A)
+```
+[Execute](http://sparql.wikipathways.org/?query=PREFIX+chembl%3A+%3Chttp%3A%2F%2Frdf.ebi.ac.uk%2Fterms%2Fchembl%23%3E%0A%0ASELECT+%3Fpathway+%3Fchembluniprot+%3Fassay+WHERE+%7B%0A++%7B%0A++++SELECT+DISTINCT%0A++++++%3Fpathway%0A++++++iri%28%0A++++++++bif%3Aconcat%28%22http%3A%2F%2Fpurl.uniprot.org%2Funiprot%2F%22%2C%0A++++++++bif%3Aregexp_substr%28%27http%3A%2F%2Fidentifiers.org%2Funiprot%2F%28.*%29%27%2C%3Funiprot%2C+1%29%29%0A++++++%29+as+%3Fchembluniprot%0A++++WHERE+%7B%0A++++++VALUES+%3Ftype+%7B+wp%3AProtein+wp%3AGeneProduct+%7D%0A++++++%3Fs+a+%3Ftype+%3B%0A+++++++++wp%3AbdbUniprot+%3Funiprot+%3B%0A+++++++++dcterms%3AisPartOf+%3Fpathway+.%0A++++++%3Fpathway+a+wp%3APathway+.%0A++++%7D+LIMIT+50%0A++%7D%0A++SERVICE+%3Chttp%3A%2F%2Fwww.ebi.ac.uk%2Frdf%2Fservices%2Fchembl%2Fsparql%3E++%7B%0A++++%3Fassay+a+chembl%3AAssay+%3B+chembl%3AhasTarget%2Fchembl%3AhasTargetComponent%2Fchembl%3AtargetCmptXref+%3Fchembluniprot+.%0A++%7D%0A%7D%0A) [Edit](http://sparql.wikipathways.org/?qtxt=PREFIX+chembl%3A+%3Chttp%3A%2F%2Frdf.ebi.ac.uk%2Fterms%2Fchembl%23%3E%0A%0ASELECT+%3Fpathway+%3Fchembluniprot+%3Fassay+WHERE+%7B%0A++%7B%0A++++SELECT+DISTINCT%0A++++++%3Fpathway%0A++++++iri%28%0A++++++++bif%3Aconcat%28%22http%3A%2F%2Fpurl.uniprot.org%2Funiprot%2F%22%2C%0A++++++++bif%3Aregexp_substr%28%27http%3A%2F%2Fidentifiers.org%2Funiprot%2F%28.*%29%27%2C%3Funiprot%2C+1%29%29%0A++++++%29+as+%3Fchembluniprot%0A++++WHERE+%7B%0A++++++VALUES+%3Ftype+%7B+wp%3AProtein+wp%3AGeneProduct+%7D%0A++++++%3Fs+a+%3Ftype+%3B%0A+++++++++wp%3AbdbUniprot+%3Funiprot+%3B%0A+++++++++dcterms%3AisPartOf+%3Fpathway+.%0A++++++%3Fpathway+a+wp%3APathway+.%0A++++%7D+LIMIT+50%0A++%7D%0A++SERVICE+%3Chttp%3A%2F%2Fwww.ebi.ac.uk%2Frdf%2Fservices%2Fchembl%2Fsparql%3E++%7B%0A++++%3Fassay+a+chembl%3AAssay+%3B+chembl%3AhasTarget%2Fchembl%3AhasTargetComponent%2Fchembl%3AtargetCmptXref+%3Fchembluniprot+.%0A++%7D%0A%7D%0A)
 
-### Output<table>
+
+### Output
+<table>
   <tr>
     <td><b>pathway</b></td>
     <td><b>chembluniprot</b></td>
@@ -110,6 +116,9 @@ SELECT ?pathway ?chembluniprot ?assay WHERE {
     <td>http://rdf.ebi.ac.uk/resource/chembl/assay/CHEMBL3875645</td>
   </tr>
 </table>
-## Code examples### curl```shellcurl -o allChEMBLAssays.rq https://raw.githubusercontent.com/wikipathways/WikiPathways-SPARQL-book/master/sparql/allChEMBLAssays.rq
+## Code examples
+### curl
+```shell
+curl -o allChEMBLAssays.rq https://raw.githubusercontent.com/wikipathways/WikiPathways-SPARQL-book/master/sparql/allChEMBLAssays.rq
 curl -H "Accept: text/tab-separated-values" -G http://sparql.wikipathways.org/ --data-urlencode query@allChEMBLAssays.rq
 ```

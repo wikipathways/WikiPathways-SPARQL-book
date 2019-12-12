@@ -1,5 +1,8 @@
 # pathwayCountBySpecies.rq
-**Code examples:** [curl](#curl)### SPARQL```sparqlPREFIX dc:      <http://purl.org/dc/elements/1.1/> 
+**Code examples:** [curl](#curl)
+### SPARQL
+```sparql
+PREFIX dc:      <http://purl.org/dc/elements/1.1/> 
 PREFIX wp: <http://vocabularies.wikipathways.org/wp#>
 
 SELECT DISTINCT ?organism (str(?label) as ?name) (count(?pw) as ?pathwayCount)
@@ -9,9 +12,12 @@ WHERE {
       wp:organismName ?label .
 }
 ORDER BY DESC(?pathwayCount)
-```[Execute](http://sparql.wikipathways.org/?query=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+%0APREFIX+wp%3A+%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%3Forganism+%28str%28%3Flabel%29+as+%3Fname%29+%28count%28%3Fpw%29+as+%3FpathwayCount%29%0AWHERE+%7B%0A++++%3Fpw+dc%3Atitle+%3Ftitle+%3B%0A++++++wp%3Aorganism+%3Forganism+%3B%0A++++++wp%3AorganismName+%3Flabel+.%0A%7D%0AORDER+BY+DESC%28%3FpathwayCount%29%0A) [Edit](http://sparql.wikipathways.org/?qtxt=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+%0APREFIX+wp%3A+%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%3Forganism+%28str%28%3Flabel%29+as+%3Fname%29+%28count%28%3Fpw%29+as+%3FpathwayCount%29%0AWHERE+%7B%0A++++%3Fpw+dc%3Atitle+%3Ftitle+%3B%0A++++++wp%3Aorganism+%3Forganism+%3B%0A++++++wp%3AorganismName+%3Flabel+.%0A%7D%0AORDER+BY+DESC%28%3FpathwayCount%29%0A)
+```
+[Execute](http://sparql.wikipathways.org/?query=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+%0APREFIX+wp%3A+%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%3Forganism+%28str%28%3Flabel%29+as+%3Fname%29+%28count%28%3Fpw%29+as+%3FpathwayCount%29%0AWHERE+%7B%0A++++%3Fpw+dc%3Atitle+%3Ftitle+%3B%0A++++++wp%3Aorganism+%3Forganism+%3B%0A++++++wp%3AorganismName+%3Flabel+.%0A%7D%0AORDER+BY+DESC%28%3FpathwayCount%29%0A) [Edit](http://sparql.wikipathways.org/?qtxt=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+%0APREFIX+wp%3A+%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%3Forganism+%28str%28%3Flabel%29+as+%3Fname%29+%28count%28%3Fpw%29+as+%3FpathwayCount%29%0AWHERE+%7B%0A++++%3Fpw+dc%3Atitle+%3Ftitle+%3B%0A++++++wp%3Aorganism+%3Forganism+%3B%0A++++++wp%3AorganismName+%3Flabel+.%0A%7D%0AORDER+BY+DESC%28%3FpathwayCount%29%0A)
 
-### Output<table>
+
+### Output
+<table>
   <tr>
     <td><b>organism</b></td>
     <td><b>name</b></td>
@@ -133,6 +139,9 @@ ORDER BY DESC(?pathwayCount)
     <td>1</td>
   </tr>
 </table>
-## Code examples### curl```shellcurl -o pathwayCountBySpecies.rq https://raw.githubusercontent.com/wikipathways/WikiPathways-SPARQL-book/master/sparql/pathwayCountBySpecies.rq
+## Code examples
+### curl
+```shell
+curl -o pathwayCountBySpecies.rq https://raw.githubusercontent.com/wikipathways/WikiPathways-SPARQL-book/master/sparql/pathwayCountBySpecies.rq
 curl -H "Accept: text/tab-separated-values" -G http://sparql.wikipathways.org/ --data-urlencode query@pathwayCountBySpecies.rq
 ```

@@ -1,5 +1,8 @@
 # list100DataNodes.rq
-**Code examples:** [curl](#curl)### SPARQL```sparqlPREFIX dc:      <http://purl.org/dc/elements/1.1/> 
+**Code examples:** [curl](#curl)
+### SPARQL
+```sparql
+PREFIX dc:      <http://purl.org/dc/elements/1.1/> 
 PREFIX wp:     <http://vocabularies.wikipathways.org/wp#>
 
 SELECT DISTINCT ?node ?label
@@ -7,9 +10,12 @@ WHERE {
  ?node a wp:DataNode ;
      rdfs:label ?label .
 } LIMIT 100
-```[Execute](http://sparql.wikipathways.org/?query=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+%0APREFIX+wp%3A+++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%3Fnode+%3Flabel%0AWHERE+%7B%0A+%3Fnode+a+wp%3ADataNode+%3B%0A+++++rdfs%3Alabel+%3Flabel+.%0A%7D+LIMIT+100%0A) [Edit](http://sparql.wikipathways.org/?qtxt=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+%0APREFIX+wp%3A+++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%3Fnode+%3Flabel%0AWHERE+%7B%0A+%3Fnode+a+wp%3ADataNode+%3B%0A+++++rdfs%3Alabel+%3Flabel+.%0A%7D+LIMIT+100%0A)
+```
+[Execute](http://sparql.wikipathways.org/?query=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+%0APREFIX+wp%3A+++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%3Fnode+%3Flabel%0AWHERE+%7B%0A+%3Fnode+a+wp%3ADataNode+%3B%0A+++++rdfs%3Alabel+%3Flabel+.%0A%7D+LIMIT+100%0A) [Edit](http://sparql.wikipathways.org/?qtxt=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+%0APREFIX+wp%3A+++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%3Fnode+%3Flabel%0AWHERE+%7B%0A+%3Fnode+a+wp%3ADataNode+%3B%0A+++++rdfs%3Alabel+%3Flabel+.%0A%7D+LIMIT+100%0A)
 
-### Output<table>
+
+### Output
+<table>
   <tr>
     <td><b>node</b></td>
     <td><b>label</b></td>
@@ -415,6 +421,9 @@ WHERE {
     <td>EGFR pathway</td>
   </tr>
 </table>
-## Code examples### curl```shellcurl -o list100DataNodes.rq https://raw.githubusercontent.com/wikipathways/WikiPathways-SPARQL-book/master/sparql/list100DataNodes.rq
+## Code examples
+### curl
+```shell
+curl -o list100DataNodes.rq https://raw.githubusercontent.com/wikipathways/WikiPathways-SPARQL-book/master/sparql/list100DataNodes.rq
 curl -H "Accept: text/tab-separated-values" -G http://sparql.wikipathways.org/ --data-urlencode query@list100DataNodes.rq
 ```

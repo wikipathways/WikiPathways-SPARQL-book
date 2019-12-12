@@ -1,13 +1,19 @@
 # listAllPubMedIDs.rq
-**Code examples:** [curl](#curl)### SPARQL```sparqlPREFIX wp:      <http://vocabularies.wikipathways.org/wp#>
+**Code examples:** [curl](#curl)
+### SPARQL
+```sparql
+PREFIX wp:      <http://vocabularies.wikipathways.org/wp#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 SELECT DISTINCT ?pathway ?pubmed WHERE {
   ?pubmed a       wp:PublicationReference ;
           dcterms:isPartOf ?pathway
 } ORDER BY ?pathway LIMIT 500
-```[Execute](http://sparql.wikipathways.org/?query=PREFIX+wp%3A++++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0APREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0ASELECT+DISTINCT+%3Fpathway+%3Fpubmed+WHERE+%7B%0A++%3Fpubmed+a+++++++wp%3APublicationReference+%3B%0A++++++++++dcterms%3AisPartOf+%3Fpathway%0A%7D+ORDER+BY+%3Fpathway+LIMIT+500%0A) [Edit](http://sparql.wikipathways.org/?qtxt=PREFIX+wp%3A++++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0APREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0ASELECT+DISTINCT+%3Fpathway+%3Fpubmed+WHERE+%7B%0A++%3Fpubmed+a+++++++wp%3APublicationReference+%3B%0A++++++++++dcterms%3AisPartOf+%3Fpathway%0A%7D+ORDER+BY+%3Fpathway+LIMIT+500%0A)
+```
+[Execute](http://sparql.wikipathways.org/?query=PREFIX+wp%3A++++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0APREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0ASELECT+DISTINCT+%3Fpathway+%3Fpubmed+WHERE+%7B%0A++%3Fpubmed+a+++++++wp%3APublicationReference+%3B%0A++++++++++dcterms%3AisPartOf+%3Fpathway%0A%7D+ORDER+BY+%3Fpathway+LIMIT+500%0A) [Edit](http://sparql.wikipathways.org/?qtxt=PREFIX+wp%3A++++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0APREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0ASELECT+DISTINCT+%3Fpathway+%3Fpubmed+WHERE+%7B%0A++%3Fpubmed+a+++++++wp%3APublicationReference+%3B%0A++++++++++dcterms%3AisPartOf+%3Fpathway%0A%7D+ORDER+BY+%3Fpathway+LIMIT+500%0A)
 
-### Output<table>
+
+### Output
+<table>
   <tr>
     <td><b>pathway</b></td>
     <td><b>pubmed</b></td>
@@ -2013,6 +2019,9 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
     <td>http://identifiers.org/pubmed/11340051</td>
   </tr>
 </table>
-## Code examples### curl```shellcurl -o listAllPubMedIDs.rq https://raw.githubusercontent.com/wikipathways/WikiPathways-SPARQL-book/master/sparql/listAllPubMedIDs.rq
+## Code examples
+### curl
+```shell
+curl -o listAllPubMedIDs.rq https://raw.githubusercontent.com/wikipathways/WikiPathways-SPARQL-book/master/sparql/listAllPubMedIDs.rq
 curl -H "Accept: text/tab-separated-values" -G http://sparql.wikipathways.org/ --data-urlencode query@listAllPubMedIDs.rq
 ```
