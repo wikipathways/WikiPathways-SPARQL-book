@@ -3,9 +3,9 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX dc:      <http://purl.org/dc/elements/1.1/>
 PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
 
-select (count(distinct ?ninchi) as ?count) (str(?label) as ?species) where {
+select (count(distinct ?wikidata) as ?count) (str(?label) as ?species) where {
   ?metabolite a wp:Metabolite ;
-    
+    wp:bdbWikidata ?wikidata ;
     dcterms:isPartOf ?pw .
   ?pw wp:organismName ?label .
 } GROUP BY ?label ORDER BY DESC(?count)
