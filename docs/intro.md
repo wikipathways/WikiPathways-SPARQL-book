@@ -19,9 +19,9 @@ queries, like the following to get metadata about the data loaded into the SPARQ
 The following query provides some information about what is currently loaded
 in the public SPARQL endpoint at [http://sparql.wikipathways.org](http://sparql.wikipathways.org):
 
-**SPARQL** [sparql/metadata.rq](sparql/metadata.code.html) ([run](http://sparql.wikipathways.org/?query=PREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3EPREFIX+void%3A++++%3Chttp%3A%2F%2Frdfs.org%2Fns%2Fvoid%23%3EPREFIX+pav%3A+++++%3Chttp%3A%2F%2Fpurl.org%2Fpav%2F%3Eselect+distinct+%3Fdataset+%28str%28%3FtitleLit%29+as+%3Ftitle%29+%3Fdate+%3Flicense+where+%7B++%3Fdataset+a+void%3ADataset+%3B++++dcterms%3Atitle+%3FtitleLit+%3B++++dcterms%3Alicense+%3Flicense+%3B++++pav%3AcreatedOn+%3Fdate+.%7D))
-```sparql
-PREFIX dcterms: <http://purl.org/dc/terms/>
+**SPARQL** [sparql/metadata.rq](sparql/metadata.code.html) ([run](http://sparql.wikipathways.org/?query=PREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0APREFIX+void%3A++++%3Chttp%3A%2F%2Frdfs.org%2Fns%2Fvoid%23%3E%0APREFIX+pav%3A+++++%3Chttp%3A%2F%2Fpurl.org%2Fpav%2F%3E%0A%0Aselect+distinct+%3Fdataset+%28str%28%3FtitleLit%29+as+%3Ftitle%29+%3Fdate+%3Flicense+where+%7B%0A++%3Fdataset+a+void%3ADataset+%3B%0A++++dcterms%3Atitle+%3FtitleLit+%3B%0A++++dcterms%3Alicense+%3Flicense+%3B%0A++++pav%3AcreatedOn+%3Fdate+.%0A%7D%0A), [edit](http://sparql.wikipathways.org/?qtxt=PREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0APREFIX+void%3A++++%3Chttp%3A%2F%2Frdfs.org%2Fns%2Fvoid%23%3E%0APREFIX+pav%3A+++++%3Chttp%3A%2F%2Fpurl.org%2Fpav%2F%3E%0A%0Aselect+distinct+%3Fdataset+%28str%28%3FtitleLit%29+as+%3Ftitle%29+%3Fdate+%3Flicense+where+%7B%0A++%3Fdataset+a+void%3ADataset+%3B%0A++++dcterms%3Atitle+%3FtitleLit+%3B%0A++++dcterms%3Alicense+%3Flicense+%3B%0A++++pav%3AcreatedOn+%3Fdate+.%0A%7D%0A))
+
+```sparqlPREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX void:    <http://rdfs.org/ns/void#>
 PREFIX pav:     <http://purl.org/pav/>
 select distinct ?dataset (str(?titleLit) as ?title) ?date ?license where {
@@ -56,11 +56,12 @@ statistics.
 
 ### Number of pathways per species
 
-We can list the number of pathways for each species available in WikiPathways:
+We can list the number of pathways for each species available in WikiPathways
+with this query:
 
-**SPARQL** [sparql/pathwayCountBySpecies.rq](sparql/pathwayCountBySpecies.code.html) ([run](http://sparql.wikipathways.org/?query=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+PREFIX+wp%3A+%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3ESELECT+DISTINCT+%3Forganism+%28str%28%3Flabel%29+as+%3Fname%29+%28count%28%3Fpw%29+as+%3FpathwayCount%29WHERE+%7B++++%3Fpw+dc%3Atitle+%3Ftitle+%3B++++++wp%3Aorganism+%3Forganism+%3B++++++wp%3AorganismName+%3Flabel+.%7DORDER+BY+DESC%28%3FpathwayCount%29))
-```sparql
-PREFIX dc:      <http://purl.org/dc/elements/1.1/> 
+**SPARQL** [sparql/pathwayCountBySpecies.rq](sparql/pathwayCountBySpecies.code.html) ([run](http://sparql.wikipathways.org/?query=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+%0APREFIX+wp%3A+%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%3Forganism+%28str%28%3Flabel%29+as+%3Fname%29+%28count%28%3Fpw%29+as+%3FpathwayCount%29%0AWHERE+%7B%0A++++%3Fpw+dc%3Atitle+%3Ftitle+%3B%0A++++++wp%3Aorganism+%3Forganism+%3B%0A++++++wp%3AorganismName+%3Flabel+.%0A%7D%0AORDER+BY+DESC%28%3FpathwayCount%29%0A), [edit](http://sparql.wikipathways.org/?qtxt=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+%0APREFIX+wp%3A+%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%3Forganism+%28str%28%3Flabel%29+as+%3Fname%29+%28count%28%3Fpw%29+as+%3FpathwayCount%29%0AWHERE+%7B%0A++++%3Fpw+dc%3Atitle+%3Ftitle+%3B%0A++++++wp%3Aorganism+%3Forganism+%3B%0A++++++wp%3AorganismName+%3Flabel+.%0A%7D%0AORDER+BY+DESC%28%3FpathwayCount%29%0A))
+
+```sparqlPREFIX dc:      <http://purl.org/dc/elements/1.1/> 
 PREFIX wp: <http://vocabularies.wikipathways.org/wp#>
 SELECT DISTINCT ?organism (str(?label) as ?name) (count(?pw) as ?pathwayCount)
 WHERE {
@@ -71,26 +72,254 @@ WHERE {
 ORDER BY DESC(?pathwayCount)
 ```
 
+It shows us that there is a strong bias towards human pathways:
+
+<table>
+  <tr>
+    <td><b>organism</b></td>
+    <td><b>name</b></td>
+    <td><b>pathwayCount</b></td>
+  </tr>
+  <tr>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_9606</td>
+    <td>Homo sapiens</td>
+    <td>1041</td>
+  </tr>
+  <tr>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_9913</td>
+    <td>Bos taurus</td>
+    <td>274</td>
+  </tr>
+  <tr>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_10090</td>
+    <td>Mus musculus</td>
+    <td>194</td>
+  </tr>
+  <tr>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_10116</td>
+    <td>Rattus norvegicus</td>
+    <td>155</td>
+  </tr>
+  <tr>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_4932</td>
+    <td>Saccharomyces cerevisiae</td>
+    <td>115</td>
+  </tr>
+  <tr>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_7955</td>
+    <td>Danio rerio</td>
+    <td>83</td>
+  </tr>
+  <tr>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_6239</td>
+    <td>Caenorhabditis elegans</td>
+    <td>61</td>
+  </tr>
+  <tr>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_9598</td>
+    <td>Pan troglodytes</td>
+    <td>46</td>
+  </tr>
+  <tr>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_9615</td>
+    <td>Canis familiaris</td>
+    <td>44</td>
+  </tr>
+  <tr>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_9031</td>
+    <td>Gallus gallus</td>
+    <td>40</td>
+  </tr>
+  <tr>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_3702</td>
+    <td>Arabidopsis thaliana</td>
+    <td>31</td>
+  </tr>
+  <tr>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_7227</td>
+    <td>Drosophila melanogaster</td>
+    <td>30</td>
+  </tr>
+  <tr>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_7165</td>
+    <td>Anopheles gambiae</td>
+    <td>14</td>
+  </tr>
+  <tr>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_1773</td>
+    <td>Mycobacterium tuberculosis</td>
+    <td>12</td>
+  </tr>
+  <tr>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_4530</td>
+    <td>Oryza sativa</td>
+    <td>11</td>
+  </tr>
+  <tr>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_562</td>
+    <td>Escherichia coli</td>
+    <td>9</td>
+  </tr>
+  <tr>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_9796</td>
+    <td>Equus caballus</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_3694</td>
+    <td>Populus trichocarpa</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_4081</td>
+    <td>Solanum lycopersicum</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_4577</td>
+    <td>Zea mays</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_1423</td>
+    <td>Bacillus subtilis</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_5518</td>
+    <td>Gibberella zeae</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_5833</td>
+    <td>Plasmodium falciparum</td>
+    <td>1</td>
+  </tr>
+</table>
+
+
 ### Number of metabolites per species
 
 Counting metabolites is tricky, as metabolites that are biologically the same (e.g. different
 charge startes) can have different identifiers. A further complications is that not all metabolites
 in WikiPathways always have stereochemistry defined, for example because it is biologically
-obvious, as for amino acids. But we can count the number of InChIKeys of the neutral compounds
+obvious, as for amino acids. But we can count the number of Wikidata identifiers
 to get a reasonable estimate:
 
-**SPARQL** [sparql/metaboliteCountBySpecies.rq](sparql/metaboliteCountBySpecies.code.html) ([run](http://sparql.wikipathways.org/?query=PREFIX+gpml%3A++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fgpml%23%3EPREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3EPREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3EPREFIX+rdf%3A+++++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+select+%28count%28distinct+%3Fninchi%29+as+%3Fcount%29+%28str%28%3Flabel%29+as+%3Fspecies%29+where+%7B++%3Fmetabolite+a+wp%3AMetabolite+%3B++++++++dcterms%3AisPartOf+%3Fpw+.++%3Fpw+wp%3AorganismName+%3Flabel+.%7D+GROUP+BY+%3Flabel+ORDER+BY+DESC%28%3Fcount%29))
-```sparql
-PREFIX gpml:    <http://vocabularies.wikipathways.org/gpml#>
+**SPARQL** [sparql/metaboliteCountBySpecies.rq](sparql/metaboliteCountBySpecies.code.html) ([run](http://sparql.wikipathways.org/?query=PREFIX+gpml%3A++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fgpml%23%3E%0APREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0APREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0APREFIX+rdf%3A+++++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+%0A%0Aselect+%28count%28distinct+%3Fwikidata%29+as+%3Fcount%29+%28str%28%3Flabel%29+as+%3Fspecies%29+where+%7B%0A++%3Fmetabolite+a+wp%3AMetabolite+%3B%0A++++wp%3AbdbWikidata+%3Fwikidata+%3B%0A++++dcterms%3AisPartOf+%3Fpw+.%0A++%3Fpw+wp%3AorganismName+%3Flabel+.%0A%7D+GROUP+BY+%3Flabel+ORDER+BY+DESC%28%3Fcount%29%0A), [edit](http://sparql.wikipathways.org/?qtxt=PREFIX+gpml%3A++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fgpml%23%3E%0APREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0APREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0APREFIX+rdf%3A+++++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+%0A%0Aselect+%28count%28distinct+%3Fwikidata%29+as+%3Fcount%29+%28str%28%3Flabel%29+as+%3Fspecies%29+where+%7B%0A++%3Fmetabolite+a+wp%3AMetabolite+%3B%0A++++wp%3AbdbWikidata+%3Fwikidata+%3B%0A++++dcterms%3AisPartOf+%3Fpw+.%0A++%3Fpw+wp%3AorganismName+%3Flabel+.%0A%7D+GROUP+BY+%3Flabel+ORDER+BY+DESC%28%3Fcount%29%0A))
+
+```sparqlPREFIX gpml:    <http://vocabularies.wikipathways.org/gpml#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX dc:      <http://purl.org/dc/elements/1.1/>
 PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
-select (count(distinct ?ninchi) as ?count) (str(?label) as ?species) where {
+select (count(distinct ?wikidata) as ?count) (str(?label) as ?species) where {
   ?metabolite a wp:Metabolite ;
+    wp:bdbWikidata ?wikidata ;
     dcterms:isPartOf ?pw .
   ?pw wp:organismName ?label .
 } GROUP BY ?label ORDER BY DESC(?count)
 ```
+
+This tells us:
+
+<table>
+  <tr>
+    <td><b>count</b></td>
+    <td><b>species</b></td>
+  </tr>
+  <tr>
+    <td>2890</td>
+    <td>Homo sapiens</td>
+  </tr>
+  <tr>
+    <td>843</td>
+    <td>Bos taurus</td>
+  </tr>
+  <tr>
+    <td>840</td>
+    <td>Mus musculus</td>
+  </tr>
+  <tr>
+    <td>489</td>
+    <td>Rattus norvegicus</td>
+  </tr>
+  <tr>
+    <td>439</td>
+    <td>Arabidopsis thaliana</td>
+  </tr>
+  <tr>
+    <td>338</td>
+    <td>Saccharomyces cerevisiae</td>
+  </tr>
+  <tr>
+    <td>169</td>
+    <td>Danio rerio</td>
+  </tr>
+  <tr>
+    <td>125</td>
+    <td>Canis familiaris</td>
+  </tr>
+  <tr>
+    <td>104</td>
+    <td>Pan troglodytes</td>
+  </tr>
+  <tr>
+    <td>97</td>
+    <td>Mycobacterium tuberculosis</td>
+  </tr>
+  <tr>
+    <td>81</td>
+    <td>Caenorhabditis elegans</td>
+  </tr>
+  <tr>
+    <td>75</td>
+    <td>Gallus gallus</td>
+  </tr>
+  <tr>
+    <td>69</td>
+    <td>Oryza sativa</td>
+  </tr>
+  <tr>
+    <td>65</td>
+    <td>Escherichia coli</td>
+  </tr>
+  <tr>
+    <td>63</td>
+    <td>Drosophila melanogaster</td>
+  </tr>
+  <tr>
+    <td>58</td>
+    <td>Zea mays</td>
+  </tr>
+  <tr>
+    <td>49</td>
+    <td>Anopheles gambiae</td>
+  </tr>
+  <tr>
+    <td>39</td>
+    <td>Solanum lycopersicum</td>
+  </tr>
+  <tr>
+    <td>31</td>
+    <td>Populus trichocarpa</td>
+  </tr>
+  <tr>
+    <td>20</td>
+    <td>Equus caballus</td>
+  </tr>
+  <tr>
+    <td>13</td>
+    <td>Plasmodium falciparum</td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>Gibberella zeae</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>Bacillus subtilis</td>
+  </tr>
+</table>
 
 
 ## References

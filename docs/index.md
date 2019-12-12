@@ -27,10 +27,7 @@ Wishes, comments, and pull requests can be send to
 2.3. [Genes, proteins, and metabolites](model.md#genes,-proteins,-and-metabolites) <br />
 2.3.1. [Metabolites](model.md#metabolites) <br />
 3. [Federated Queries](feds.md) <br />
-3.1. [The Kidney & Urinary Pathway Knowledge Base](feds.md#the-kidney-&-urinary-pathway-knowledge-base) <br />
-3.1.1. [Assays for genes in WP1560](feds.md#assays-for-genes-in-wp1560) <br />
-3.1.2. [Assays for metabolites in WP3604](feds.md#assays-for-metabolites-in-wp3604) <br />
-3.2. [ChEMBL](feds.md#chembl) <br />
-3.2.1. [Bioassays related to a pathway](feds.md#bioassays-related-to-a-pathway) <br />
+3.1. [ChEMBL](feds.md#chembl) <br />
+3.1.1. [Bioassays related to a pathway](feds.md#bioassays-related-to-a-pathway) <br />
 
 [Index](indexList.md) <br />
