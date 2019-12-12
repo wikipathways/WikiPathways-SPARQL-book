@@ -31,19 +31,29 @@ statistics.
 
 ### Number of pathways per species
 
-We can list the number of pathways for each species available in WikiPathways:
+We can list the number of pathways for each species available in WikiPathways
+with this query:
 
 <sparql>pathwayCountBySpecies</sparql>
+
+It shows us that there is a strong bias towards human pathways:
+
+<out>pathwayCountBySpecies</out>
+
 
 ### Number of metabolites per species
 
 Counting metabolites is tricky, as metabolites that are biologically the same (e.g. different
 charge startes) can have different identifiers. A further complications is that not all metabolites
 in WikiPathways always have stereochemistry defined, for example because it is biologically
-obvious, as for amino acids. But we can count the number of InChIKeys of the neutral compounds
+obvious, as for amino acids. But we can count the number of Wikidata identifiers
 to get a reasonable estimate:
 
 <sparql>metaboliteCountBySpecies</sparql>
+
+This tells us:
+
+<out>metaboliteCountBySpecies</out>
 
 
 ## References
