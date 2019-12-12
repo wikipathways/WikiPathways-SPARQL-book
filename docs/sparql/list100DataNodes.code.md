@@ -11,7 +11,7 @@ WHERE {
      rdfs:label ?label .
 } LIMIT 100
 ```
-[Execute](http://sparql.wikipathways.org/?query=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+%0APREFIX+wp%3A+++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%3Fnode+%3Flabel%0AWHERE+%7B%0A+%3Fnode+a+wp%3ADataNode+%3B%0A+++++rdfs%3Alabel+%3Flabel+.%0A%7D+LIMIT+100%0A) [Edit](http://sparql.wikipathways.org/?qtxt=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+%0APREFIX+wp%3A+++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%3Fnode+%3Flabel%0AWHERE+%7B%0A+%3Fnode+a+wp%3ADataNode+%3B%0A+++++rdfs%3Alabel+%3Flabel+.%0A%7D+LIMIT+100%0A)
+[Execute](http://sparql.wikipathways.org/?query=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+%0APREFIX+wp%3A+++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%3Fnode+%3Flabel%0AWHERE+%7B%0A+%3Fnode+a+wp%3ADataNode+%3B%0A+++++rdfs%3Alabel+%3Flabel+.%0A%7D+LIMIT+100%0A) or [Edit](http://sparql.wikipathways.org/?qtxt=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+%0APREFIX+wp%3A+++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%3Fnode+%3Flabel%0AWHERE+%7B%0A+%3Fnode+a+wp%3ADataNode+%3B%0A+++++rdfs%3Alabel+%3Flabel+.%0A%7D+LIMIT+100%0A)
 
 
 ### Output

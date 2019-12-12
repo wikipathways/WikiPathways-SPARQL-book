@@ -10,7 +10,7 @@ WHERE {
      ?predicate [] .
 }
 ```
-[Execute](http://sparql.wikipathways.org/?query=PREFIX+wp%3A+++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%3Fpredicate%0AWHERE+%7B%0A+%3Fpw+a+wp%3APathway+%3B%0A+++++%3Fpredicate+%5B%5D+.%0A%7D%0A) [Edit](http://sparql.wikipathways.org/?qtxt=PREFIX+wp%3A+++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%3Fpredicate%0AWHERE+%7B%0A+%3Fpw+a+wp%3APathway+%3B%0A+++++%3Fpredicate+%5B%5D+.%0A%7D%0A)
+[Execute](http://sparql.wikipathways.org/?query=PREFIX+wp%3A+++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%3Fpredicate%0AWHERE+%7B%0A+%3Fpw+a+wp%3APathway+%3B%0A+++++%3Fpredicate+%5B%5D+.%0A%7D%0A) or [Edit](http://sparql.wikipathways.org/?qtxt=PREFIX+wp%3A+++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%3Fpredicate%0AWHERE+%7B%0A+%3Fpw+a+wp%3APathway+%3B%0A+++++%3Fpredicate+%5B%5D+.%0A%7D%0A)
 
 
 ### Output

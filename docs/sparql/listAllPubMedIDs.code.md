@@ -9,7 +9,7 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
           dcterms:isPartOf ?pathway
 } ORDER BY ?pathway LIMIT 500
 ```
-[Execute](http://sparql.wikipathways.org/?query=PREFIX+wp%3A++++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0APREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0ASELECT+DISTINCT+%3Fpathway+%3Fpubmed+WHERE+%7B%0A++%3Fpubmed+a+++++++wp%3APublicationReference+%3B%0A++++++++++dcterms%3AisPartOf+%3Fpathway%0A%7D+ORDER+BY+%3Fpathway+LIMIT+500%0A) [Edit](http://sparql.wikipathways.org/?qtxt=PREFIX+wp%3A++++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0APREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0ASELECT+DISTINCT+%3Fpathway+%3Fpubmed+WHERE+%7B%0A++%3Fpubmed+a+++++++wp%3APublicationReference+%3B%0A++++++++++dcterms%3AisPartOf+%3Fpathway%0A%7D+ORDER+BY+%3Fpathway+LIMIT+500%0A)
+[Execute](http://sparql.wikipathways.org/?query=PREFIX+wp%3A++++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0APREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0ASELECT+DISTINCT+%3Fpathway+%3Fpubmed+WHERE+%7B%0A++%3Fpubmed+a+++++++wp%3APublicationReference+%3B%0A++++++++++dcterms%3AisPartOf+%3Fpathway%0A%7D+ORDER+BY+%3Fpathway+LIMIT+500%0A) or [Edit](http://sparql.wikipathways.org/?qtxt=PREFIX+wp%3A++++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0APREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0ASELECT+DISTINCT+%3Fpathway+%3Fpubmed+WHERE+%7B%0A++%3Fpubmed+a+++++++wp%3APublicationReference+%3B%0A++++++++++dcterms%3AisPartOf+%3Fpathway%0A%7D+ORDER+BY+%3Fpathway+LIMIT+500%0A)
 
 
 ### Output
