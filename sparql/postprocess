@@ -42,8 +42,7 @@ mdTypes.add("code");
 
 def srcLines = new File(srcFile).readLines()
 unencodedSPARQL = ""
-srcLines.each { String srcLine -> unencodedSPARQL += srcLine }
-unencodedSPARQL = unencodedSPARQL.replace("\n", "\n ")
+srcLines.each { String srcLine -> unencodedSPARQL += srcLine + "\n" }
 encodedSPARQL = java.net.URLEncoder.encode(unencodedSPARQL, "UTF-8")
 runURL = "http://sparql.wikipathways.org/?query=" + encodedSPARQL
 editURL = "http://sparql.wikipathways.org/?qtxt=" + encodedSPARQL // Virtuoso specific?
@@ -61,30 +60,32 @@ for (int type=0; type<mdTypes.size(); type++) {
     if (line.length() > 0) {
       if (line.contains("%MD%")) {
         line = line.replace("%MD%", md.toString());
-        mdWriter.write(line);
       } else if (line.contains("%STEM%")) {
         line = line.replace("%STEM%", runClass);
         line = line.replace("%EXT%", srcExt);
         if (line.contains("%RUNURL%")) line = line.replace("%RUNURL%", runURL);
-        mdWriter.write(line + "\n");
+        line = line + "\n";
       } else if (line.contains("%SYNTAX%")) {
         line = line.replace("%SYNTAX%", srcExt);
-        mdWriter.write(line + "\n");
+        line = line + "\n";
       } else if (line.contains("%SOURCECODE%")) {
         srcLines = new File(srcFile).readLines()
         srcLines.each { String srcLine -> mdWriter.write(srcLine + "\n") }
+        line = ""
       } else if (line.contains("%OUT%")) {
         srcLines = new File(runClass + ".out").readLines()
         srcLines.each { String srcLine -> mdWriter.write(srcLine + "\n") }
-      } else if (line.contains("%RUNURL%")) {
-        line = line.replace("%RUNURL%", runURL);
-        mdWriter.write(line + "\n");
-      } else if (line.contains("%EDITURL%")) {
-        line = line.replace("%EDITURL%", editURL);
-        mdWriter.write(line + "\n");
-      } else {
-        mdWriter.write(line + "\n");
+        line = ""
       }
+      if (line.contains("%RUNURL%")) {
+        line = line.replace("%RUNURL%", runURL);
+        line = line + "\n";
+      }
+      if (line.contains("%EDITURL%")) {
+        line = line.replace("%EDITURL%", editURL);
+        line = line + "\n";
+      }
+      mdWriter.write(line);
     }
     line = template.readLine();
   }
