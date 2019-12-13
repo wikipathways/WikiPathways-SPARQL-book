@@ -1,9 +1,9 @@
 # WikiPathways SPARQL Book
 
 
-**Egon L. Willighagen**<br />
+**Egon L. Willighagen**, **Andra Waagmeester**<br />
 
-© E.L. Willighagen 2019
+© 2019 The Authors
 
 License: CC-BY-SA 4.0 International
 
