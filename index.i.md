@@ -3,7 +3,7 @@
 
 **Egon L. Willighagen**, **Andra Waagmeester**<br />
 
-© 2019 The Authors
+© 2019-2020 The Authors
 
 License: CC-BY-SA 4.0 International
 
