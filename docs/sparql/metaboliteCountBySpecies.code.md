@@ -14,7 +14,7 @@ select (count(distinct ?wikidata) as ?count) (str(?label) as ?species) where {
   ?pw wp:organismName ?label .
 } GROUP BY ?label ORDER BY DESC(?count)
 ```
-[Execute](http://sparql.wikipathways.org/?query=PREFIX+gpml%3A++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fgpml%23%3E%0APREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0APREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0APREFIX+rdf%3A+++++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+%0A%0Aselect+%28count%28distinct+%3Fwikidata%29+as+%3Fcount%29+%28str%28%3Flabel%29+as+%3Fspecies%29+where+%7B%0A++%3Fmetabolite+a+wp%3AMetabolite+%3B%0A++++wp%3AbdbWikidata+%3Fwikidata+%3B%0A++++dcterms%3AisPartOf+%3Fpw+.%0A++%3Fpw+wp%3AorganismName+%3Flabel+.%0A%7D+GROUP+BY+%3Flabel+ORDER+BY+DESC%28%3Fcount%29%0A) or [Edit](http://sparql.wikipathways.org/?qtxt=PREFIX+gpml%3A++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fgpml%23%3E%0APREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0APREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0APREFIX+rdf%3A+++++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+%0A%0Aselect+%28count%28distinct+%3Fwikidata%29+as+%3Fcount%29+%28str%28%3Flabel%29+as+%3Fspecies%29+where+%7B%0A++%3Fmetabolite+a+wp%3AMetabolite+%3B%0A++++wp%3AbdbWikidata+%3Fwikidata+%3B%0A++++dcterms%3AisPartOf+%3Fpw+.%0A++%3Fpw+wp%3AorganismName+%3Flabel+.%0A%7D+GROUP+BY+%3Flabel+ORDER+BY+DESC%28%3Fcount%29%0A)
+[Execute](http://sparql.wikipathways.org/sparql?query=PREFIX+gpml%3A++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fgpml%23%3E%0APREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0APREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0APREFIX+rdf%3A+++++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+%0A%0Aselect+%28count%28distinct+%3Fwikidata%29+as+%3Fcount%29+%28str%28%3Flabel%29+as+%3Fspecies%29+where+%7B%0A++%3Fmetabolite+a+wp%3AMetabolite+%3B%0A++++wp%3AbdbWikidata+%3Fwikidata+%3B%0A++++dcterms%3AisPartOf+%3Fpw+.%0A++%3Fpw+wp%3AorganismName+%3Flabel+.%0A%7D+GROUP+BY+%3Flabel+ORDER+BY+DESC%28%3Fcount%29%0A) or [Edit](http://sparql.wikipathways.org/sparql?qtxt=PREFIX+gpml%3A++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fgpml%23%3E%0APREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0APREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0APREFIX+rdf%3A+++++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+%0A%0Aselect+%28count%28distinct+%3Fwikidata%29+as+%3Fcount%29+%28str%28%3Flabel%29+as+%3Fspecies%29+where+%7B%0A++%3Fmetabolite+a+wp%3AMetabolite+%3B%0A++++wp%3AbdbWikidata+%3Fwikidata+%3B%0A++++dcterms%3AisPartOf+%3Fpw+.%0A++%3Fpw+wp%3AorganismName+%3Flabel+.%0A%7D+GROUP+BY+%3Flabel+ORDER+BY+DESC%28%3Fcount%29%0A)
 
 
 ### Output
@@ -24,7 +24,7 @@ select (count(distinct ?wikidata) as ?count) (str(?label) as ?species) where {
     <td><b>species</b></td>
   </tr>
   <tr>
-    <td>2890</td>
+    <td>2893</td>
     <td>Homo sapiens</td>
   </tr>
   <tr>

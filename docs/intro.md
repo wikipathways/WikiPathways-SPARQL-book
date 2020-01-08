@@ -19,7 +19,7 @@ queries, like the following to get metadata about the data loaded into the SPARQ
 The following query provides some information about what is currently loaded
 in the public SPARQL endpoint at [http://sparql.wikipathways.org](http://sparql.wikipathways.org):
 
-**SPARQL** [sparql/metadata.rq](sparql/metadata.code.html) ([run](http://sparql.wikipathways.org/?query=PREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0APREFIX+void%3A++++%3Chttp%3A%2F%2Frdfs.org%2Fns%2Fvoid%23%3E%0APREFIX+pav%3A+++++%3Chttp%3A%2F%2Fpurl.org%2Fpav%2F%3E%0A%0Aselect+distinct+%3Fdataset+%28str%28%3FtitleLit%29+as+%3Ftitle%29+%3Fdate+%3Flicense+where+%7B%0A++%3Fdataset+a+void%3ADataset+%3B%0A++++dcterms%3Atitle+%3FtitleLit+%3B%0A++++dcterms%3Alicense+%3Flicense+%3B%0A++++pav%3AcreatedOn+%3Fdate+.%0A%7D%0A), [edit](http://sparql.wikipathways.org/?qtxt=PREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0APREFIX+void%3A++++%3Chttp%3A%2F%2Frdfs.org%2Fns%2Fvoid%23%3E%0APREFIX+pav%3A+++++%3Chttp%3A%2F%2Fpurl.org%2Fpav%2F%3E%0A%0Aselect+distinct+%3Fdataset+%28str%28%3FtitleLit%29+as+%3Ftitle%29+%3Fdate+%3Flicense+where+%7B%0A++%3Fdataset+a+void%3ADataset+%3B%0A++++dcterms%3Atitle+%3FtitleLit+%3B%0A++++dcterms%3Alicense+%3Flicense+%3B%0A++++pav%3AcreatedOn+%3Fdate+.%0A%7D%0A))
+**SPARQL** [sparql/metadata.rq](sparql/metadata.code.html) ([run](http://sparql.wikipathways.org/sparql?query=PREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0APREFIX+void%3A++++%3Chttp%3A%2F%2Frdfs.org%2Fns%2Fvoid%23%3E%0APREFIX+pav%3A+++++%3Chttp%3A%2F%2Fpurl.org%2Fpav%2F%3E%0A%0Aselect+distinct+%3Fdataset+%28str%28%3FtitleLit%29+as+%3Ftitle%29+%3Fdate+%3Flicense+where+%7B%0A++%3Fdataset+a+void%3ADataset+%3B%0A++++dcterms%3Atitle+%3FtitleLit+%3B%0A++++dcterms%3Alicense+%3Flicense+%3B%0A++++pav%3AcreatedOn+%3Fdate+.%0A%7D%0A), [edit](http://sparql.wikipathways.org/sparql?qtxt=PREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0APREFIX+void%3A++++%3Chttp%3A%2F%2Frdfs.org%2Fns%2Fvoid%23%3E%0APREFIX+pav%3A+++++%3Chttp%3A%2F%2Fpurl.org%2Fpav%2F%3E%0A%0Aselect+distinct+%3Fdataset+%28str%28%3FtitleLit%29+as+%3Ftitle%29+%3Fdate+%3Flicense+where+%7B%0A++%3Fdataset+a+void%3ADataset+%3B%0A++++dcterms%3Atitle+%3FtitleLit+%3B%0A++++dcterms%3Alicense+%3Flicense+%3B%0A++++pav%3AcreatedOn+%3Fdate+.%0A%7D%0A))
 
 ```sparql
 PREFIX dcterms: <http://purl.org/dc/terms/>
@@ -43,9 +43,9 @@ Which gives as output:
     <td><b>license</b></td>
   </tr>
   <tr>
-    <td>http://data.wikipathways.org/20191110/rdf/</td>
-    <td>WikiPathways RDF 20191110</td>
-    <td>2019-11-10T10:49:50.340Z</td>
+    <td>http://data.wikipathways.org/20191210/rdf/</td>
+    <td>WikiPathways RDF 20191210</td>
+    <td>2019-12-09T23:28:23.591Z</td>
     <td>http://creativecommons.org/publicdomain/zero/1.0/</td>
   </tr>
 </table>
@@ -60,7 +60,7 @@ statistics.
 We can list the number of pathways for each species available in WikiPathways
 with this query:
 
-**SPARQL** [sparql/pathwayCountBySpecies.rq](sparql/pathwayCountBySpecies.code.html) ([run](http://sparql.wikipathways.org/?query=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+%0APREFIX+wp%3A+%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%3Forganism+%28str%28%3Flabel%29+as+%3Fname%29+%28count%28%3Fpw%29+as+%3FpathwayCount%29%0AWHERE+%7B%0A++++%3Fpw+dc%3Atitle+%3Ftitle+%3B%0A++++++wp%3Aorganism+%3Forganism+%3B%0A++++++wp%3AorganismName+%3Flabel+.%0A%7D%0AORDER+BY+DESC%28%3FpathwayCount%29%0A), [edit](http://sparql.wikipathways.org/?qtxt=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+%0APREFIX+wp%3A+%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%3Forganism+%28str%28%3Flabel%29+as+%3Fname%29+%28count%28%3Fpw%29+as+%3FpathwayCount%29%0AWHERE+%7B%0A++++%3Fpw+dc%3Atitle+%3Ftitle+%3B%0A++++++wp%3Aorganism+%3Forganism+%3B%0A++++++wp%3AorganismName+%3Flabel+.%0A%7D%0AORDER+BY+DESC%28%3FpathwayCount%29%0A))
+**SPARQL** [sparql/pathwayCountBySpecies.rq](sparql/pathwayCountBySpecies.code.html) ([run](http://sparql.wikipathways.org/sparql?query=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+%0APREFIX+wp%3A+%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%3Forganism+%28str%28%3Flabel%29+as+%3Fname%29+%28count%28%3Fpw%29+as+%3FpathwayCount%29%0AWHERE+%7B%0A++++%3Fpw+dc%3Atitle+%3Ftitle+%3B%0A++++++wp%3Aorganism+%3Forganism+%3B%0A++++++wp%3AorganismName+%3Flabel+.%0A%7D%0AORDER+BY+DESC%28%3FpathwayCount%29%0A), [edit](http://sparql.wikipathways.org/sparql?qtxt=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+%0APREFIX+wp%3A+%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%3Forganism+%28str%28%3Flabel%29+as+%3Fname%29+%28count%28%3Fpw%29+as+%3FpathwayCount%29%0AWHERE+%7B%0A++++%3Fpw+dc%3Atitle+%3Ftitle+%3B%0A++++++wp%3Aorganism+%3Forganism+%3B%0A++++++wp%3AorganismName+%3Flabel+.%0A%7D%0AORDER+BY+DESC%28%3FpathwayCount%29%0A))
 
 ```sparql
 PREFIX dc:      <http://purl.org/dc/elements/1.1/> 
@@ -85,7 +85,7 @@ It shows us that there is a strong bias towards human pathways:
   <tr>
     <td>http://purl.obolibrary.org/obo/NCBITaxon_9606</td>
     <td>Homo sapiens</td>
-    <td>1041</td>
+    <td>1044</td>
   </tr>
   <tr>
     <td>http://purl.obolibrary.org/obo/NCBITaxon_9913</td>
@@ -163,13 +163,13 @@ It shows us that there is a strong bias towards human pathways:
     <td>9</td>
   </tr>
   <tr>
-    <td>http://purl.obolibrary.org/obo/NCBITaxon_9796</td>
-    <td>Equus caballus</td>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_3694</td>
+    <td>Populus trichocarpa</td>
     <td>5</td>
   </tr>
   <tr>
-    <td>http://purl.obolibrary.org/obo/NCBITaxon_3694</td>
-    <td>Populus trichocarpa</td>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_9796</td>
+    <td>Equus caballus</td>
     <td>5</td>
   </tr>
   <tr>
@@ -188,13 +188,13 @@ It shows us that there is a strong bias towards human pathways:
     <td>2</td>
   </tr>
   <tr>
-    <td>http://purl.obolibrary.org/obo/NCBITaxon_5518</td>
-    <td>Gibberella zeae</td>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_5833</td>
+    <td>Plasmodium falciparum</td>
     <td>1</td>
   </tr>
   <tr>
-    <td>http://purl.obolibrary.org/obo/NCBITaxon_5833</td>
-    <td>Plasmodium falciparum</td>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_5518</td>
+    <td>Gibberella zeae</td>
     <td>1</td>
   </tr>
 </table>
@@ -208,7 +208,7 @@ in WikiPathways always have stereochemistry defined, for example because it is b
 obvious, as for amino acids. But we can count the number of Wikidata identifiers
 to get a reasonable estimate:
 
-**SPARQL** [sparql/metaboliteCountBySpecies.rq](sparql/metaboliteCountBySpecies.code.html) ([run](http://sparql.wikipathways.org/?query=PREFIX+gpml%3A++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fgpml%23%3E%0APREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0APREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0APREFIX+rdf%3A+++++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+%0A%0Aselect+%28count%28distinct+%3Fwikidata%29+as+%3Fcount%29+%28str%28%3Flabel%29+as+%3Fspecies%29+where+%7B%0A++%3Fmetabolite+a+wp%3AMetabolite+%3B%0A++++wp%3AbdbWikidata+%3Fwikidata+%3B%0A++++dcterms%3AisPartOf+%3Fpw+.%0A++%3Fpw+wp%3AorganismName+%3Flabel+.%0A%7D+GROUP+BY+%3Flabel+ORDER+BY+DESC%28%3Fcount%29%0A), [edit](http://sparql.wikipathways.org/?qtxt=PREFIX+gpml%3A++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fgpml%23%3E%0APREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0APREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0APREFIX+rdf%3A+++++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+%0A%0Aselect+%28count%28distinct+%3Fwikidata%29+as+%3Fcount%29+%28str%28%3Flabel%29+as+%3Fspecies%29+where+%7B%0A++%3Fmetabolite+a+wp%3AMetabolite+%3B%0A++++wp%3AbdbWikidata+%3Fwikidata+%3B%0A++++dcterms%3AisPartOf+%3Fpw+.%0A++%3Fpw+wp%3AorganismName+%3Flabel+.%0A%7D+GROUP+BY+%3Flabel+ORDER+BY+DESC%28%3Fcount%29%0A))
+**SPARQL** [sparql/metaboliteCountBySpecies.rq](sparql/metaboliteCountBySpecies.code.html) ([run](http://sparql.wikipathways.org/sparql?query=PREFIX+gpml%3A++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fgpml%23%3E%0APREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0APREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0APREFIX+rdf%3A+++++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+%0A%0Aselect+%28count%28distinct+%3Fwikidata%29+as+%3Fcount%29+%28str%28%3Flabel%29+as+%3Fspecies%29+where+%7B%0A++%3Fmetabolite+a+wp%3AMetabolite+%3B%0A++++wp%3AbdbWikidata+%3Fwikidata+%3B%0A++++dcterms%3AisPartOf+%3Fpw+.%0A++%3Fpw+wp%3AorganismName+%3Flabel+.%0A%7D+GROUP+BY+%3Flabel+ORDER+BY+DESC%28%3Fcount%29%0A), [edit](http://sparql.wikipathways.org/sparql?qtxt=PREFIX+gpml%3A++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fgpml%23%3E%0APREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0APREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E%0APREFIX+rdf%3A+++++%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+%0A%0Aselect+%28count%28distinct+%3Fwikidata%29+as+%3Fcount%29+%28str%28%3Flabel%29+as+%3Fspecies%29+where+%7B%0A++%3Fmetabolite+a+wp%3AMetabolite+%3B%0A++++wp%3AbdbWikidata+%3Fwikidata+%3B%0A++++dcterms%3AisPartOf+%3Fpw+.%0A++%3Fpw+wp%3AorganismName+%3Flabel+.%0A%7D+GROUP+BY+%3Flabel+ORDER+BY+DESC%28%3Fcount%29%0A))
 
 ```sparql
 PREFIX gpml:    <http://vocabularies.wikipathways.org/gpml#>
@@ -231,7 +231,7 @@ This tells us:
     <td><b>species</b></td>
   </tr>
   <tr>
-    <td>2890</td>
+    <td>2893</td>
     <td>Homo sapiens</td>
   </tr>
   <tr>

@@ -10,7 +10,7 @@ WHERE {
      ?predicate [] .
 }
 ```
-[Execute](http://sparql.wikipathways.org/?query=PREFIX+wp%3A+++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%3Fpredicate%0AWHERE+%7B%0A+%3Fpw+a+wp%3APathway+%3B%0A+++++%3Fpredicate+%5B%5D+.%0A%7D%0A) or [Edit](http://sparql.wikipathways.org/?qtxt=PREFIX+wp%3A+++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%3Fpredicate%0AWHERE+%7B%0A+%3Fpw+a+wp%3APathway+%3B%0A+++++%3Fpredicate+%5B%5D+.%0A%7D%0A)
+[Execute](http://sparql.wikipathways.org/sparql?query=PREFIX+wp%3A+++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%3Fpredicate%0AWHERE+%7B%0A+%3Fpw+a+wp%3APathway+%3B%0A+++++%3Fpredicate+%5B%5D+.%0A%7D%0A) or [Edit](http://sparql.wikipathways.org/sparql?qtxt=PREFIX+wp%3A+++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%3Fpredicate%0AWHERE+%7B%0A+%3Fpw+a+wp%3APathway+%3B%0A+++++%3Fpredicate+%5B%5D+.%0A%7D%0A)
 
 
 ### Output
@@ -22,19 +22,22 @@ WHERE {
     <td>http://www.w3.org/1999/02/22-rdf-syntax-ns#type</td>
   </tr>
   <tr>
+    <td>http://purl.org/dc/terms/description</td>
+  </tr>
+  <tr>
     <td>http://purl.org/dc/elements/1.1/identifier</td>
   </tr>
   <tr>
-    <td>http://purl.org/dc/terms/description</td>
+    <td>http://purl.org/dc/elements/1.1/source</td>
   </tr>
   <tr>
     <td>http://purl.org/dc/elements/1.1/title</td>
   </tr>
   <tr>
-    <td>http://purl.org/dc/terms/references</td>
+    <td>http://purl.org/dc/terms/identifier</td>
   </tr>
   <tr>
-    <td>http://xmlns.com/foaf/0.1/page</td>
+    <td>http://purl.org/dc/terms/references</td>
   </tr>
   <tr>
     <td>wp:cellTypeOntologyTag</td>
@@ -58,10 +61,7 @@ WHERE {
     <td>wp:pathwayOntologyTag</td>
   </tr>
   <tr>
-    <td>http://purl.org/dc/elements/1.1/source</td>
-  </tr>
-  <tr>
-    <td>http://purl.org/dc/terms/identifier</td>
+    <td>http://xmlns.com/foaf/0.1/page</td>
   </tr>
 </table>
 ## Code examples

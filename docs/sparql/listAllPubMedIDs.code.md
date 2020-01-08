@@ -9,7 +9,7 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
           dcterms:isPartOf ?pathway
 } ORDER BY ?pathway LIMIT 500
 ```
-[Execute](http://sparql.wikipathways.org/?query=PREFIX+wp%3A++++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0APREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0ASELECT+DISTINCT+%3Fpathway+%3Fpubmed+WHERE+%7B%0A++%3Fpubmed+a+++++++wp%3APublicationReference+%3B%0A++++++++++dcterms%3AisPartOf+%3Fpathway%0A%7D+ORDER+BY+%3Fpathway+LIMIT+500%0A) or [Edit](http://sparql.wikipathways.org/?qtxt=PREFIX+wp%3A++++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0APREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0ASELECT+DISTINCT+%3Fpathway+%3Fpubmed+WHERE+%7B%0A++%3Fpubmed+a+++++++wp%3APublicationReference+%3B%0A++++++++++dcterms%3AisPartOf+%3Fpathway%0A%7D+ORDER+BY+%3Fpathway+LIMIT+500%0A)
+[Execute](http://sparql.wikipathways.org/sparql?query=PREFIX+wp%3A++++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0APREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0ASELECT+DISTINCT+%3Fpathway+%3Fpubmed+WHERE+%7B%0A++%3Fpubmed+a+++++++wp%3APublicationReference+%3B%0A++++++++++dcterms%3AisPartOf+%3Fpathway%0A%7D+ORDER+BY+%3Fpathway+LIMIT+500%0A) or [Edit](http://sparql.wikipathways.org/sparql?qtxt=PREFIX+wp%3A++++++%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0APREFIX+dcterms%3A+%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Fterms%2F%3E%0ASELECT+DISTINCT+%3Fpathway+%3Fpubmed+WHERE+%7B%0A++%3Fpubmed+a+++++++wp%3APublicationReference+%3B%0A++++++++++dcterms%3AisPartOf+%3Fpathway%0A%7D+ORDER+BY+%3Fpathway+LIMIT+500%0A)
 
 
 ### Output
@@ -152,11 +152,11 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1026_r105923</td>
-    <td>http://identifiers.org/pubmed/13271447</td>
+    <td>http://identifiers.org/pubmed/17389618</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1026_r105923</td>
-    <td>http://identifiers.org/pubmed/17389618</td>
+    <td>http://identifiers.org/pubmed/13271447</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1026_r105923</td>
@@ -240,10 +240,6 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1033_r105956</td>
-    <td>http://identifiers.org/pubmed/17464936</td>
-  </tr>
-  <tr>
-    <td>http://identifiers.org/wikipathways/WP1033_r105956</td>
     <td>http://identifiers.org/pubmed/15134803</td>
   </tr>
   <tr>
@@ -269,6 +265,10 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
   <tr>
     <td>http://identifiers.org/wikipathways/WP1033_r105956</td>
     <td>http://identifiers.org/pubmed/18729003</td>
+  </tr>
+  <tr>
+    <td>http://identifiers.org/wikipathways/WP1033_r105956</td>
+    <td>http://identifiers.org/pubmed/17464936</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1034_r105950</td>
@@ -380,11 +380,11 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1038_r105994</td>
-    <td>http://identifiers.org/pubmed/19715393</td>
+    <td>http://identifiers.org/pubmed/2656356</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1038_r105994</td>
-    <td>http://identifiers.org/pubmed/2656356</td>
+    <td>http://identifiers.org/pubmed/19715393</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP103_r107713</td>
@@ -427,67 +427,67 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
     <td>http://identifiers.org/pubmed/12618512</td>
   </tr>
   <tr>
-    <td>http://identifiers.org/wikipathways/WP1044_r106017</td>
+    <td>http://identifiers.org/wikipathways/WP1044_r108257</td>
     <td>http://identifiers.org/pubmed/19419954</td>
   </tr>
   <tr>
-    <td>http://identifiers.org/wikipathways/WP1044_r106017</td>
+    <td>http://identifiers.org/wikipathways/WP1044_r108257</td>
     <td>http://identifiers.org/pubmed/10490623</td>
   </tr>
   <tr>
-    <td>http://identifiers.org/wikipathways/WP1044_r106017</td>
+    <td>http://identifiers.org/wikipathways/WP1044_r108257</td>
     <td>http://identifiers.org/pubmed/10880430</td>
   </tr>
   <tr>
-    <td>http://identifiers.org/wikipathways/WP1044_r106017</td>
+    <td>http://identifiers.org/wikipathways/WP1044_r108257</td>
     <td>http://identifiers.org/pubmed/11252954</td>
   </tr>
   <tr>
-    <td>http://identifiers.org/wikipathways/WP1044_r106017</td>
+    <td>http://identifiers.org/wikipathways/WP1044_r108257</td>
     <td>http://identifiers.org/pubmed/12851486</td>
   </tr>
   <tr>
-    <td>http://identifiers.org/wikipathways/WP1044_r106017</td>
+    <td>http://identifiers.org/wikipathways/WP1044_r108257</td>
     <td>http://identifiers.org/pubmed/14744244</td>
   </tr>
   <tr>
-    <td>http://identifiers.org/wikipathways/WP1044_r106017</td>
+    <td>http://identifiers.org/wikipathways/WP1044_r108257</td>
     <td>http://identifiers.org/pubmed/14967450</td>
   </tr>
   <tr>
-    <td>http://identifiers.org/wikipathways/WP1044_r106017</td>
+    <td>http://identifiers.org/wikipathways/WP1044_r108257</td>
     <td>http://identifiers.org/pubmed/15863494</td>
   </tr>
   <tr>
-    <td>http://identifiers.org/wikipathways/WP1044_r106017</td>
+    <td>http://identifiers.org/wikipathways/WP1044_r108257</td>
     <td>http://identifiers.org/pubmed/15864276</td>
   </tr>
   <tr>
-    <td>http://identifiers.org/wikipathways/WP1044_r106017</td>
+    <td>http://identifiers.org/wikipathways/WP1044_r108257</td>
     <td>http://identifiers.org/pubmed/16377102</td>
   </tr>
   <tr>
-    <td>http://identifiers.org/wikipathways/WP1044_r106017</td>
+    <td>http://identifiers.org/wikipathways/WP1044_r108257</td>
     <td>http://identifiers.org/pubmed/16729043</td>
   </tr>
   <tr>
-    <td>http://identifiers.org/wikipathways/WP1044_r106017</td>
+    <td>http://identifiers.org/wikipathways/WP1044_r108257</td>
     <td>http://identifiers.org/pubmed/16729045</td>
   </tr>
   <tr>
-    <td>http://identifiers.org/wikipathways/WP1044_r106017</td>
+    <td>http://identifiers.org/wikipathways/WP1044_r108257</td>
     <td>http://identifiers.org/pubmed/16829981</td>
   </tr>
   <tr>
-    <td>http://identifiers.org/wikipathways/WP1044_r106017</td>
+    <td>http://identifiers.org/wikipathways/WP1044_r108257</td>
     <td>http://identifiers.org/pubmed/17000658</td>
   </tr>
   <tr>
-    <td>http://identifiers.org/wikipathways/WP1044_r106017</td>
+    <td>http://identifiers.org/wikipathways/WP1044_r108257</td>
     <td>http://identifiers.org/pubmed/9642287</td>
   </tr>
   <tr>
-    <td>http://identifiers.org/wikipathways/WP1044_r106017</td>
+    <td>http://identifiers.org/wikipathways/WP1044_r108257</td>
     <td>http://identifiers.org/pubmed/9872057</td>
   </tr>
   <tr>
@@ -616,6 +616,18 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
+    <td>http://identifiers.org/pubmed/11447225</td>
+  </tr>
+  <tr>
+    <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
+    <td>http://identifiers.org/pubmed/10484769</td>
+  </tr>
+  <tr>
+    <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
+    <td>http://identifiers.org/pubmed/11001804</td>
+  </tr>
+  <tr>
+    <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
     <td>http://identifiers.org/pubmed/10048303</td>
   </tr>
   <tr>
@@ -632,23 +644,11 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
-    <td>http://identifiers.org/pubmed/10720158</td>
-  </tr>
-  <tr>
-    <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
     <td>http://identifiers.org/pubmed/10833329</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
-    <td>http://identifiers.org/pubmed/11001804</td>
-  </tr>
-  <tr>
-    <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
     <td>http://identifiers.org/pubmed/11017945</td>
-  </tr>
-  <tr>
-    <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
-    <td>http://identifiers.org/pubmed/11090610</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
@@ -661,10 +661,6 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
   <tr>
     <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
     <td>http://identifiers.org/pubmed/11447214</td>
-  </tr>
-  <tr>
-    <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
-    <td>http://identifiers.org/pubmed/11447225</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
@@ -684,14 +680,6 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
-    <td>http://identifiers.org/pubmed/12432932</td>
-  </tr>
-  <tr>
-    <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
-    <td>http://identifiers.org/pubmed/12432933</td>
-  </tr>
-  <tr>
-    <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
     <td>http://identifiers.org/pubmed/12569109</td>
   </tr>
   <tr>
@@ -705,10 +693,6 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
   <tr>
     <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
     <td>http://identifiers.org/pubmed/15314690</td>
-  </tr>
-  <tr>
-    <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
-    <td>http://identifiers.org/pubmed/1542667</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
@@ -744,10 +728,6 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
-    <td>http://identifiers.org/pubmed/16835236</td>
-  </tr>
-  <tr>
-    <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
     <td>http://identifiers.org/pubmed/17049925</td>
   </tr>
   <tr>
@@ -768,15 +748,7 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
-    <td>http://identifiers.org/pubmed/17960332</td>
-  </tr>
-  <tr>
-    <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
     <td>http://identifiers.org/pubmed/18203897</td>
-  </tr>
-  <tr>
-    <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
-    <td>http://identifiers.org/pubmed/18209571</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
@@ -812,10 +784,6 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
-    <td>http://identifiers.org/pubmed/19450180</td>
-  </tr>
-  <tr>
-    <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
     <td>http://identifiers.org/pubmed/19625220</td>
   </tr>
   <tr>
@@ -829,10 +797,6 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
   <tr>
     <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
     <td>http://identifiers.org/pubmed/19854035</td>
-  </tr>
-  <tr>
-    <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
-    <td>http://identifiers.org/pubmed/2602371</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
@@ -853,6 +817,46 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
   <tr>
     <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
     <td>http://identifiers.org/pubmed/9627909</td>
+  </tr>
+  <tr>
+    <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
+    <td>http://identifiers.org/pubmed/10720158</td>
+  </tr>
+  <tr>
+    <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
+    <td>http://identifiers.org/pubmed/11090610</td>
+  </tr>
+  <tr>
+    <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
+    <td>http://identifiers.org/pubmed/12432932</td>
+  </tr>
+  <tr>
+    <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
+    <td>http://identifiers.org/pubmed/12432933</td>
+  </tr>
+  <tr>
+    <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
+    <td>http://identifiers.org/pubmed/1542667</td>
+  </tr>
+  <tr>
+    <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
+    <td>http://identifiers.org/pubmed/16835236</td>
+  </tr>
+  <tr>
+    <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
+    <td>http://identifiers.org/pubmed/17960332</td>
+  </tr>
+  <tr>
+    <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
+    <td>http://identifiers.org/pubmed/18209571</td>
+  </tr>
+  <tr>
+    <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
+    <td>http://identifiers.org/pubmed/19450180</td>
+  </tr>
+  <tr>
+    <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
+    <td>http://identifiers.org/pubmed/2602371</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
@@ -901,10 +905,6 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
   <tr>
     <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
     <td>http://identifiers.org/pubmed/9587024</td>
-  </tr>
-  <tr>
-    <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
-    <td>http://identifiers.org/pubmed/10484769</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1075_r107053</td>
@@ -1104,11 +1104,11 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1101_r71479</td>
-    <td>http://identifiers.org/pubmed/11257218</td>
+    <td>http://identifiers.org/pubmed/10966477</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1101_r71479</td>
-    <td>http://identifiers.org/pubmed/10966477</td>
+    <td>http://identifiers.org/pubmed/11257218</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1105_r87031</td>
@@ -1128,15 +1128,15 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1114_r106039</td>
-    <td>http://identifiers.org/pubmed/12676795</td>
-  </tr>
-  <tr>
-    <td>http://identifiers.org/wikipathways/WP1114_r106039</td>
     <td>http://identifiers.org/pubmed/17726008</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1114_r106039</td>
     <td>http://identifiers.org/pubmed/22539006</td>
+  </tr>
+  <tr>
+    <td>http://identifiers.org/wikipathways/WP1114_r106039</td>
+    <td>http://identifiers.org/pubmed/12676795</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1114_r106039</td>
@@ -1380,19 +1380,19 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1217_r106096</td>
-    <td>http://identifiers.org/pubmed/11409944</td>
-  </tr>
-  <tr>
-    <td>http://identifiers.org/wikipathways/WP1217_r106096</td>
     <td>http://identifiers.org/pubmed/16385575</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1217_r106096</td>
-    <td>http://identifiers.org/pubmed/16970545</td>
+    <td>http://identifiers.org/pubmed/16815959</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1217_r106096</td>
-    <td>http://identifiers.org/pubmed/16815959</td>
+    <td>http://identifiers.org/pubmed/11409944</td>
+  </tr>
+  <tr>
+    <td>http://identifiers.org/wikipathways/WP1217_r106096</td>
+    <td>http://identifiers.org/pubmed/16970545</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1217_r106096</td>
@@ -1412,11 +1412,11 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1217_r106096</td>
-    <td>http://identifiers.org/pubmed/18949601</td>
+    <td>http://identifiers.org/pubmed/16584116</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1217_r106096</td>
-    <td>http://identifiers.org/pubmed/16584116</td>
+    <td>http://identifiers.org/pubmed/18949601</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1218_r106097</td>
@@ -1660,39 +1660,15 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1259_r106842</td>
-    <td>http://identifiers.org/pubmed/12424335</td>
-  </tr>
-  <tr>
-    <td>http://identifiers.org/wikipathways/WP1259_r106842</td>
-    <td>http://identifiers.org/pubmed/1669523</td>
-  </tr>
-  <tr>
-    <td>http://identifiers.org/wikipathways/WP1259_r106842</td>
-    <td>http://identifiers.org/pubmed/2353161</td>
-  </tr>
-  <tr>
-    <td>http://identifiers.org/wikipathways/WP1259_r106842</td>
-    <td>http://identifiers.org/pubmed/8030600</td>
-  </tr>
-  <tr>
-    <td>http://identifiers.org/wikipathways/WP1259_r106842</td>
-    <td>http://identifiers.org/pubmed/8469562</td>
-  </tr>
-  <tr>
-    <td>http://identifiers.org/wikipathways/WP1259_r106842</td>
-    <td>http://identifiers.org/pubmed/8483266</td>
-  </tr>
-  <tr>
-    <td>http://identifiers.org/wikipathways/WP1259_r106842</td>
-    <td>http://identifiers.org/pubmed/9828775</td>
-  </tr>
-  <tr>
-    <td>http://identifiers.org/wikipathways/WP1259_r106842</td>
     <td>http://identifiers.org/pubmed/10227052</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1259_r106842</td>
     <td>http://identifiers.org/pubmed/11585356</td>
+  </tr>
+  <tr>
+    <td>http://identifiers.org/wikipathways/WP1259_r106842</td>
+    <td>http://identifiers.org/pubmed/12424335</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1259_r106842</td>
@@ -1716,6 +1692,14 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1259_r106842</td>
+    <td>http://identifiers.org/pubmed/1669523</td>
+  </tr>
+  <tr>
+    <td>http://identifiers.org/wikipathways/WP1259_r106842</td>
+    <td>http://identifiers.org/pubmed/2353161</td>
+  </tr>
+  <tr>
+    <td>http://identifiers.org/wikipathways/WP1259_r106842</td>
     <td>http://identifiers.org/pubmed/3019190</td>
   </tr>
   <tr>
@@ -1725,6 +1709,18 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
   <tr>
     <td>http://identifiers.org/wikipathways/WP1259_r106842</td>
     <td>http://identifiers.org/pubmed/8017322</td>
+  </tr>
+  <tr>
+    <td>http://identifiers.org/wikipathways/WP1259_r106842</td>
+    <td>http://identifiers.org/pubmed/8030600</td>
+  </tr>
+  <tr>
+    <td>http://identifiers.org/wikipathways/WP1259_r106842</td>
+    <td>http://identifiers.org/pubmed/8469562</td>
+  </tr>
+  <tr>
+    <td>http://identifiers.org/wikipathways/WP1259_r106842</td>
+    <td>http://identifiers.org/pubmed/8483266</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1259_r106842</td>
@@ -1744,6 +1740,10 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1259_r106842</td>
+    <td>http://identifiers.org/pubmed/9828775</td>
+  </tr>
+  <tr>
+    <td>http://identifiers.org/wikipathways/WP1259_r106842</td>
     <td>http://identifiers.org/pubmed/12401878</td>
   </tr>
   <tr>
@@ -1752,19 +1752,19 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1262_r106843</td>
-    <td>http://identifiers.org/pubmed/11409944</td>
-  </tr>
-  <tr>
-    <td>http://identifiers.org/wikipathways/WP1262_r106843</td>
     <td>http://identifiers.org/pubmed/16385575</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1262_r106843</td>
-    <td>http://identifiers.org/pubmed/16970545</td>
+    <td>http://identifiers.org/pubmed/16815959</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1262_r106843</td>
-    <td>http://identifiers.org/pubmed/16815959</td>
+    <td>http://identifiers.org/pubmed/11409944</td>
+  </tr>
+  <tr>
+    <td>http://identifiers.org/wikipathways/WP1262_r106843</td>
+    <td>http://identifiers.org/pubmed/16970545</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1262_r106843</td>
@@ -1784,11 +1784,11 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1262_r106843</td>
-    <td>http://identifiers.org/pubmed/18949601</td>
+    <td>http://identifiers.org/pubmed/16584116</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1262_r106843</td>
-    <td>http://identifiers.org/pubmed/16584116</td>
+    <td>http://identifiers.org/pubmed/18949601</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1263_r106844</td>
@@ -1932,19 +1932,19 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1273_r106851</td>
-    <td>http://identifiers.org/pubmed/10444342</td>
-  </tr>
-  <tr>
-    <td>http://identifiers.org/wikipathways/WP1273_r106851</td>
     <td>http://identifiers.org/pubmed/11731805</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1273_r106851</td>
-    <td>http://identifiers.org/pubmed/14726604</td>
+    <td>http://identifiers.org/pubmed/10444342</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1273_r106851</td>
     <td>http://identifiers.org/pubmed/8968737</td>
+  </tr>
+  <tr>
+    <td>http://identifiers.org/wikipathways/WP1273_r106851</td>
+    <td>http://identifiers.org/pubmed/14726604</td>
   </tr>
   <tr>
     <td>http://identifiers.org/wikipathways/WP1273_r106851</td>
@@ -1995,7 +1995,7 @@ SELECT DISTINCT ?pathway ?pubmed WHERE {
     <td>http://identifiers.org/pubmed/16477006</td>
   </tr>
   <tr>
-    <td>http://identifiers.org/wikipathways/WP127_r78498</td>
+    <td>http://identifiers.org/wikipathways/WP127_r108326</td>
     <td>http://identifiers.org/pubmed/20067622</td>
   </tr>
   <tr>

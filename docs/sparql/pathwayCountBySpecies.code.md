@@ -13,7 +13,7 @@ WHERE {
 }
 ORDER BY DESC(?pathwayCount)
 ```
-[Execute](http://sparql.wikipathways.org/?query=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+%0APREFIX+wp%3A+%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%3Forganism+%28str%28%3Flabel%29+as+%3Fname%29+%28count%28%3Fpw%29+as+%3FpathwayCount%29%0AWHERE+%7B%0A++++%3Fpw+dc%3Atitle+%3Ftitle+%3B%0A++++++wp%3Aorganism+%3Forganism+%3B%0A++++++wp%3AorganismName+%3Flabel+.%0A%7D%0AORDER+BY+DESC%28%3FpathwayCount%29%0A) or [Edit](http://sparql.wikipathways.org/?qtxt=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+%0APREFIX+wp%3A+%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%3Forganism+%28str%28%3Flabel%29+as+%3Fname%29+%28count%28%3Fpw%29+as+%3FpathwayCount%29%0AWHERE+%7B%0A++++%3Fpw+dc%3Atitle+%3Ftitle+%3B%0A++++++wp%3Aorganism+%3Forganism+%3B%0A++++++wp%3AorganismName+%3Flabel+.%0A%7D%0AORDER+BY+DESC%28%3FpathwayCount%29%0A)
+[Execute](http://sparql.wikipathways.org/sparql?query=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+%0APREFIX+wp%3A+%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%3Forganism+%28str%28%3Flabel%29+as+%3Fname%29+%28count%28%3Fpw%29+as+%3FpathwayCount%29%0AWHERE+%7B%0A++++%3Fpw+dc%3Atitle+%3Ftitle+%3B%0A++++++wp%3Aorganism+%3Forganism+%3B%0A++++++wp%3AorganismName+%3Flabel+.%0A%7D%0AORDER+BY+DESC%28%3FpathwayCount%29%0A) or [Edit](http://sparql.wikipathways.org/sparql?qtxt=PREFIX+dc%3A++++++%3Chttp%3A%2F%2Fpurl.org%2Fdc%2Felements%2F1.1%2F%3E+%0APREFIX+wp%3A+%3Chttp%3A%2F%2Fvocabularies.wikipathways.org%2Fwp%23%3E%0A%0ASELECT+DISTINCT+%3Forganism+%28str%28%3Flabel%29+as+%3Fname%29+%28count%28%3Fpw%29+as+%3FpathwayCount%29%0AWHERE+%7B%0A++++%3Fpw+dc%3Atitle+%3Ftitle+%3B%0A++++++wp%3Aorganism+%3Forganism+%3B%0A++++++wp%3AorganismName+%3Flabel+.%0A%7D%0AORDER+BY+DESC%28%3FpathwayCount%29%0A)
 
 
 ### Output
@@ -26,7 +26,7 @@ ORDER BY DESC(?pathwayCount)
   <tr>
     <td>http://purl.obolibrary.org/obo/NCBITaxon_9606</td>
     <td>Homo sapiens</td>
-    <td>1041</td>
+    <td>1044</td>
   </tr>
   <tr>
     <td>http://purl.obolibrary.org/obo/NCBITaxon_9913</td>
@@ -104,13 +104,13 @@ ORDER BY DESC(?pathwayCount)
     <td>9</td>
   </tr>
   <tr>
-    <td>http://purl.obolibrary.org/obo/NCBITaxon_9796</td>
-    <td>Equus caballus</td>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_3694</td>
+    <td>Populus trichocarpa</td>
     <td>5</td>
   </tr>
   <tr>
-    <td>http://purl.obolibrary.org/obo/NCBITaxon_3694</td>
-    <td>Populus trichocarpa</td>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_9796</td>
+    <td>Equus caballus</td>
     <td>5</td>
   </tr>
   <tr>
@@ -129,13 +129,13 @@ ORDER BY DESC(?pathwayCount)
     <td>2</td>
   </tr>
   <tr>
-    <td>http://purl.obolibrary.org/obo/NCBITaxon_5518</td>
-    <td>Gibberella zeae</td>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_5833</td>
+    <td>Plasmodium falciparum</td>
     <td>1</td>
   </tr>
   <tr>
-    <td>http://purl.obolibrary.org/obo/NCBITaxon_5833</td>
-    <td>Plasmodium falciparum</td>
+    <td>http://purl.obolibrary.org/obo/NCBITaxon_5518</td>
+    <td>Gibberella zeae</td>
     <td>1</td>
   </tr>
 </table>
